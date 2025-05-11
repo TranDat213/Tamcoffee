@@ -48,55 +48,49 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(357, 186);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(268, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 2;
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(369, 292);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhau.Location = new System.Drawing.Point(277, 237);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(200, 22);
+            this.txtMatKhau.Size = new System.Drawing.Size(151, 20);
             this.txtMatKhau.TabIndex = 9;
             // 
             // txtTenTaiKhoan
             // 
-            this.txtTenTaiKhoan.Location = new System.Drawing.Point(369, 260);
-            this.txtTenTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenTaiKhoan.Location = new System.Drawing.Point(277, 211);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            this.txtTenTaiKhoan.Size = new System.Drawing.Size(200, 22);
+            this.txtTenTaiKhoan.Size = new System.Drawing.Size(151, 20);
             this.txtTenTaiKhoan.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(235, 295);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(176, 240);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Mật Khẩu";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(223, 263);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(167, 214);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Tên Tài Khoản";
             // 
             // llblQuenMatKhau
             // 
             this.llblQuenMatKhau.AutoSize = true;
-            this.llblQuenMatKhau.Location = new System.Drawing.Point(365, 407);
-            this.llblQuenMatKhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblQuenMatKhau.Location = new System.Drawing.Point(274, 331);
             this.llblQuenMatKhau.Name = "llblQuenMatKhau";
-            this.llblQuenMatKhau.Size = new System.Drawing.Size(97, 16);
+            this.llblQuenMatKhau.Size = new System.Drawing.Size(82, 13);
             this.llblQuenMatKhau.TabIndex = 10;
             this.llblQuenMatKhau.TabStop = true;
             this.llblQuenMatKhau.Text = "Quên Mật Khẩu";
@@ -105,10 +99,9 @@
             // llblDangKy
             // 
             this.llblDangKy.AutoSize = true;
-            this.llblDangKy.Location = new System.Drawing.Point(497, 407);
-            this.llblDangKy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblDangKy.Location = new System.Drawing.Point(373, 331);
             this.llblDangKy.Name = "llblDangKy";
-            this.llblDangKy.Size = new System.Drawing.Size(57, 16);
+            this.llblDangKy.Size = new System.Drawing.Size(48, 13);
             this.llblDangKy.TabIndex = 11;
             this.llblDangKy.TabStop = true;
             this.llblDangKy.Text = "Đăng Ký";
@@ -116,21 +109,20 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(424, 341);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangNhap.Location = new System.Drawing.Point(318, 277);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(97, 28);
+            this.btnDangNhap.Size = new System.Drawing.Size(73, 23);
             this.btnDangNhap.TabIndex = 12;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::WindowsFormsApp1.Properties.Resources.login;
-            this.pictureBox3.Location = new System.Drawing.Point(176, 295);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(132, 240);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(39, 27);
+            this.pictureBox3.Size = new System.Drawing.Size(29, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
@@ -138,10 +130,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(176, 252);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(132, 205);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(29, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
@@ -151,19 +142,18 @@
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Logoquan;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(365, 57);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(274, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(243, 145);
+            this.pictureBox1.Size = new System.Drawing.Size(182, 118);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 502);
+            this.ClientSize = new System.Drawing.Size(693, 408);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -176,7 +166,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DangNhap";
             this.Text = "DangNhap";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

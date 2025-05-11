@@ -28,5 +28,10 @@ namespace WindowsFormsApp1
             DangKy dangKy = new DangKy();
             dangKy.ShowDialog();
         }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
