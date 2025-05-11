@@ -1,5 +1,5 @@
 using TamCoffee.Gui;
-using WindowsFormsApp1;
+using TamCoffee.Tests;
 
 namespace TamCoffee
 {
@@ -15,6 +15,7 @@ namespace TamCoffee
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new formDangNhap());
+            testDB.readTnSanpham();
         }
     }
 }
