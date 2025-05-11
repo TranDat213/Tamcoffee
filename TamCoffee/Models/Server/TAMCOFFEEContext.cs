@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Logging;
+// dotnet ef dbcontext scaffold -o Modelssss -f -d "Server=localhost;Port=3306;Database=TAMCOFFEE;Uid=root;Pwd=" "Pomelo.EntityFrameworkCore.MySql"
 
 namespace TamCoffee.Models.Server
 {
