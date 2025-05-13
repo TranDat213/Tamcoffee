@@ -61,6 +61,7 @@
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.Size = new Size(200, 27);
             txtMatKhau.TabIndex = 9;
+            txtMatKhau.TextChanged += txtMatKhau_TextChanged;
             // 
             // txtTenTaiKhoan
             // 
@@ -126,7 +127,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = global::TamCoffee.Properties.Resources.login;
+            pictureBox3.Image = Properties.Resources.login;
             pictureBox3.Location = new Point(176, 369);
             pictureBox3.Margin = new Padding(4, 5, 4, 5);
             pictureBox3.Name = "pictureBox3";
@@ -137,7 +138,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = global::TamCoffee.Properties.Resources.user;
+            pictureBox2.Image = Properties.Resources.user;
             pictureBox2.Location = new Point(176, 315);
             pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
@@ -149,7 +150,7 @@
             // pictureBox1
             // 
             pictureBox1.ErrorImage = null;
-            pictureBox1.Image = global::TamCoffee.Properties.Resources.Logoquan;
+            pictureBox1.Image = Properties.Resources.Logoquan;
             pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(365, 51);
             pictureBox1.Margin = new Padding(4, 5, 4, 5);
@@ -179,12 +180,12 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "formDangNhap";
             Text = "DangNhap";
+            Load += formDangNhap_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
-
         }
 
         #endregion
