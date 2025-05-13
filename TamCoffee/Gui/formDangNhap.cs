@@ -19,14 +19,19 @@ namespace TamCoffee.Gui
 
         private void llblQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //QuenMatKhau quenmatkhau = new QuenMatKhau();
-            //quenmatkhau.ShowDialog();
+            formQuenMatKhau quenmatkhau = new formQuenMatKhau();
+            quenmatkhau.ShowDialog();
         }
 
         private void llblDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //DangKy dangKy = new DangKy();
-            //dangKy.ShowDialog();
+            DangKy dangKy = new DangKy();
+            dangKy.ShowDialog();
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
