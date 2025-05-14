@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using TamCoffee.Dao;
+using TamCoffee.Models;
 using TamCoffee.Models.Server;
 namespace TamCoffee.Tests
 {
@@ -38,6 +40,36 @@ namespace TamCoffee.Tests
                 sanpham.TenSanPham = "Bánh mì";
                 Console.Write($" so dong cap nhat {dbcontext.SaveChanges()})");
                 MessageBox.Show(sanpham.printinfo());
+            }
+        }
+
+        public static void readLoaiSP()
+        {
+            LoaiSanPhamDao ls = new LoaiSanPhamDao();
+            foreach (var loai in ls.LayTatCaLoai())
+            {
+                string message = $"{loai.TenLoaiSanPham} (ID: {loai.MaLoaiSanPham})\n";
+                message += "Danh sách sản phẩm:\n";
+
+                if (loai.Sanphams.Any())
+                    message += string.Join("\n", loai.Sanphams.Select(sp => $" - {sp.TenSanPham} -{sp.GiaSp} -{sp.MaLoaiSanPhamNavigation}"));
+                else
+                    message += " - (Không có sp)";
+
+                MessageBox.Show(message);
+            }
+        }
+        public static void deleteSP(int ma)
+        {
+            try
+            {
+                SanphamDao spd = new SanphamDao();
+                spd.DeleteSanpham(ma);
+                MessageBox.Show("Xoa thanh cong");
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show($"{e.Message}");
             }
         }
     }

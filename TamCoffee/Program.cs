@@ -1,4 +1,4 @@
-using TamCoffee.Gui;
+﻿using TamCoffee.Gui;
 using TamCoffee.Tests;
 
 namespace TamCoffee
@@ -14,7 +14,7 @@ namespace TamCoffee
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //testDB.readTnSanpham();
+            // testDB.deleteSP(27);
             Application.Run(new formDangNhap());
         }
     }
