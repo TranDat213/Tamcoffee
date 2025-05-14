@@ -137,7 +137,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = global::TamCoffee.Properties.Resources.website;
+            pictureBox1.Image = Properties.Resources.website;
             pictureBox1.Location = new Point(269, 99);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
@@ -150,7 +150,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(657, 692);
+            ClientSize = new Size(588, 692);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Controls.Add(btnDangKy);
