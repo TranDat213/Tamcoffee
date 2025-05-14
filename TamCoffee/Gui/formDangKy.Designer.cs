@@ -46,81 +46,81 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(83, 238);
+            label1.Location = new Point(73, 178);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 20);
+            label1.Size = new Size(79, 15);
             label1.TabIndex = 0;
             label1.Text = "Tên Tài Khoản";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(83, 276);
+            label2.Location = new Point(73, 207);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 20);
+            label2.Size = new Size(58, 15);
             label2.TabIndex = 1;
             label2.Text = "Mật Khẩu";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(83, 312);
+            label3.Location = new Point(73, 234);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(139, 20);
+            label3.Size = new Size(112, 15);
             label3.TabIndex = 2;
             label3.Text = "Xác Nhận Mật Khẩu";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(83, 350);
+            label4.Location = new Point(73, 262);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(46, 20);
+            label4.Size = new Size(36, 15);
             label4.TabIndex = 3;
             label4.Text = "Email";
             // 
             // txtTenTaiKhoan
             // 
-            txtTenTaiKhoan.Location = new Point(229, 232);
-            txtTenTaiKhoan.Margin = new Padding(4, 5, 4, 5);
+            txtTenTaiKhoan.Location = new Point(200, 174);
+            txtTenTaiKhoan.Margin = new Padding(4, 4, 4, 4);
             txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            txtTenTaiKhoan.Size = new Size(200, 27);
+            txtTenTaiKhoan.Size = new Size(176, 23);
             txtTenTaiKhoan.TabIndex = 4;
             // 
             // txtMatKhau
             // 
-            txtMatKhau.Location = new Point(229, 272);
-            txtMatKhau.Margin = new Padding(4, 5, 4, 5);
+            txtMatKhau.Location = new Point(200, 204);
+            txtMatKhau.Margin = new Padding(4, 4, 4, 4);
             txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(200, 27);
+            txtMatKhau.Size = new Size(176, 23);
             txtMatKhau.TabIndex = 5;
             // 
             // txtXNMK
             // 
-            txtXNMK.Location = new Point(229, 305);
-            txtXNMK.Margin = new Padding(4, 5, 4, 5);
+            txtXNMK.Location = new Point(200, 229);
+            txtXNMK.Margin = new Padding(4, 4, 4, 4);
             txtXNMK.Name = "txtXNMK";
-            txtXNMK.Size = new Size(200, 27);
+            txtXNMK.Size = new Size(176, 23);
             txtXNMK.TabIndex = 6;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(229, 342);
-            txtEmail.Margin = new Padding(4, 5, 4, 5);
+            txtEmail.Location = new Point(200, 256);
+            txtEmail.Margin = new Padding(4, 4, 4, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(200, 27);
+            txtEmail.Size = new Size(176, 23);
             txtEmail.TabIndex = 7;
             // 
             // btnDangKy
             // 
-            btnDangKy.Location = new Point(277, 399);
-            btnDangKy.Margin = new Padding(4, 5, 4, 5);
+            btnDangKy.Location = new Point(242, 299);
+            btnDangKy.Margin = new Padding(4, 4, 4, 4);
             btnDangKy.Name = "btnDangKy";
-            btnDangKy.Size = new Size(97, 35);
+            btnDangKy.Size = new Size(85, 26);
             btnDangKy.TabIndex = 8;
             btnDangKy.Text = "Đăng Ký";
             btnDangKy.UseVisualStyleBackColor = true;
@@ -129,28 +129,36 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft YaHei", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(263, 24);
+            label5.Location = new Point(230, 18);
             label5.Name = "label5";
-            label5.Size = new Size(111, 31);
+            label5.Size = new Size(93, 26);
             label5.TabIndex = 9;
             label5.Text = "Đăng Ký";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.website;
+
             pictureBox1.Location = new Point(269, 99);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
+
+            pictureBox1.Location = new Point(235, 74);
+
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(92, 100);
+            pictureBox1.Size = new Size(80, 75);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 
             // DangKy
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+
             ClientSize = new Size(588, 692);
+
+            ClientSize = new Size(575, 519);
+
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Controls.Add(btnDangKy);
@@ -163,13 +171,13 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "DangKy";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKy";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
-
         }
 
         #endregion

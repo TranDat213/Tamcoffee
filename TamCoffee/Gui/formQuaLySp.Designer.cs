@@ -201,7 +201,6 @@
             linkThemsp.TabIndex = 20;
             linkThemsp.TabStop = true;
             linkThemsp.Text = "Thêm sản phẩm";
-
             // 
             // linkLabel3
             // 
@@ -268,6 +267,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "formQuaLySp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "formQuanLySp";
             Load += formThemSp_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

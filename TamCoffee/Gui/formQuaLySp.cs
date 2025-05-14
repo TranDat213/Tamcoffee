@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1;
+
 
 namespace TamCoffee.Gui
 {
@@ -20,8 +20,8 @@ namespace TamCoffee.Gui
 
         private void label1_Click(object sender, EventArgs e)
         {
-            formHome home=new formHome();
-            home.ShowDialog();
+            //formHome home=new formHome();
+            //home.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)

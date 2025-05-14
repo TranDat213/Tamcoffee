@@ -35,11 +35,11 @@ namespace TamCoffee.Gui
             dangKy.ShowDialog();
         }
 
-<<<<<<< HEAD
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
+
+
+        
             
-=======
+
         private void formDangNhap_Load(object sender, EventArgs e)
         {
 
@@ -47,7 +47,22 @@ namespace TamCoffee.Gui
 
         private void txtTenTaiKhoan_TextChanged(object sender, EventArgs e)
         {
->>>>>>> 1a2d677 ( Quan Li Nhan Vien + Hoa Don)
+        }
+
+
+       
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = true;
+
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            Gui.FormMain frmMain = new Gui.FormMain();
+            frmMain.ShowDialog();
+
         }
     }
 }
