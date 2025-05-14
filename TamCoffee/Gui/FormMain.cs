@@ -761,9 +761,8 @@
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Gui.formQuaLySp formQuaLySp = new formQuaLySp();
-            formQuaLySp.ShowDialog();
+        {Gui.formQuanLiNhanVien formnv= new formQuanLiNhanVien();
+            formnv.ShowDialog();
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

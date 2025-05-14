@@ -78,6 +78,7 @@
             pictureBox6 = new PictureBox();
             panel5 = new Panel();
             pictureBox9 = new PictureBox();
+            btnXemHD = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -642,11 +643,22 @@
             pictureBox9.TabIndex = 0;
             pictureBox9.TabStop = false;
             // 
+            // btnXemHD
+            // 
+            btnXemHD.Location = new Point(825, 395);
+            btnXemHD.Name = "btnXemHD";
+            btnXemHD.Size = new Size(139, 23);
+            btnXemHD.TabIndex = 49;
+            btnXemHD.Text = "Xem hóa đơn";
+            btnXemHD.UseVisualStyleBackColor = true;
+            btnXemHD.Click += button15_Click;
+            // 
             // FormChonMon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(976, 426);
+            Controls.Add(btnXemHD);
             Controls.Add(panel9);
             Controls.Add(panel11);
             Controls.Add(panel13);
@@ -755,5 +767,6 @@
         private PictureBox pictureBox6;
         private Panel panel5;
         private PictureBox pictureBox9;
+        private Button btnXemHD;
     }
 }

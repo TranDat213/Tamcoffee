@@ -38,5 +38,11 @@ namespace TamCoffee.Gui
         {
             this.ShowDialog();
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Gui.formHoaDon hoaDon= new Gui.formHoaDon();
+            hoaDon.ShowDialog();
+        }
     }
 }

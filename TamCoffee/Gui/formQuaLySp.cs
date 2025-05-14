@@ -33,5 +33,33 @@ namespace TamCoffee.Gui
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Gui.formQLHoaDon formHoaDon = new Gui.formQLHoaDon();
+            formHoaDon.ShowDialog();
+        }
+
+        private void linkTrangChu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Gui.FormMain formMain = new Gui.FormMain();
+            formMain.ShowDialog();
+        }
+
+        private void linkThemsp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formQuaLySp formQuaLySp = new formQuaLySp();
+            formQuaLySp.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
