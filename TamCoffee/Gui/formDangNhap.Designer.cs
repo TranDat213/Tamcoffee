@@ -64,6 +64,7 @@
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.Size = new Size(176, 23);
             txtMatKhau.TabIndex = 9;
+            txtMatKhau.TextChanged += txtMatKhau_TextChanged;
             // 
             // txtTenTaiKhoan
             // 
@@ -131,8 +132,8 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.login;
-            pictureBox3.Location = new Point(154, 277);
-            pictureBox3.Margin = new Padding(4);
+            pictureBox3.Location = new Point(176, 369);
+            pictureBox3.Margin = new Padding(4, 5, 4, 5);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(34, 26);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -142,8 +143,8 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.user;
-            pictureBox2.Location = new Point(154, 236);
-            pictureBox2.Margin = new Padding(4);
+            pictureBox2.Location = new Point(176, 315);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(34, 26);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -186,7 +187,9 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "formDangNhap";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DangNhap";
+            Load += formDangNhap_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

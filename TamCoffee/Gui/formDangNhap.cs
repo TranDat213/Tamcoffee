@@ -29,9 +29,22 @@ namespace TamCoffee.Gui
             dangKy.ShowDialog();
         }
 
+
+        private void formDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = true;
+
+        }
+
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            
+            Gui.FormMain frmMain = new Gui.FormMain();
+            frmMain.ShowDialog();
         }
     }
 }
