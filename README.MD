@@ -18,4 +18,5 @@ dotnet add package Microsoft.Extensions.DependencyInjection --version 6.0.2
 dotnet add package Microsoft.Extensions.Logging.Console --version 6.0.0
 dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.2
 dotnet add package System.Data.SqlClient --version 4.9.0
+dotnet add package Microsoft.Extensions.Configuration.Json
 ```

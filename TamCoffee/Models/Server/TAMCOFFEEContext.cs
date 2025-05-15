@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+// dotnet ef dbcontext scaffold -o Modelssss -f -d "Server=localhost;Port=3306;Database=TAMCOFFEE;Uid=root;Pwd=" "Pomelo.EntityFrameworkCore.MySql"
 
 namespace TamCoffee.Models.Server
 {
@@ -10,6 +13,10 @@ namespace TamCoffee.Models.Server
     {
         public TAMCOFFEEContext()
         {
+            config = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
         }
 
         public TAMCOFFEEContext(DbContextOptions<TAMCOFFEEContext> options)
@@ -26,7 +33,11 @@ namespace TamCoffee.Models.Server
         public virtual DbSet<Taikhoan> Taikhoans { get; set; } = null!;
         public virtual DbSet<Trangthaidonhang> Trangthaidonhangs { get; set; } = null!;
 
-        private static string connext_str = "server=localhost;port=3306;database=TAMCOFFEE;uid=root;password=;";
+        public static IConfiguration config;
+
+        private static string connext_str = config.GetConnectionString("DefaultConnection")!;
+
+        public String getConnection(){ return connext_str; }
         private static ServerVersion version = ServerVersion.Parse("9.1.0-mysql");
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,7 +45,6 @@ namespace TamCoffee.Models.Server
             {
                 ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
                 optionsBuilder.UseMySql(connext_str, version).UseLoggerFactory(loggerFactory);
-
             }
         }
 
