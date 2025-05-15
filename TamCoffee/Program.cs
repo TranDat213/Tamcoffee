@@ -1,5 +1,7 @@
 ﻿using TamCoffee.Gui;
+using TamCoffee.Models.Dto;
 using TamCoffee.Tests;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace TamCoffee
 {
@@ -15,7 +17,7 @@ namespace TamCoffee
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             // testDB.deleteSP(27);
-            Application.Run(new formDangNhap());
+            //Application.Run(new formDangNhap());
         }
     }
 }
