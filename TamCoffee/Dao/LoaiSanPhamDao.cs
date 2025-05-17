@@ -20,8 +20,8 @@ namespace TamCoffee.Dao
         {
             try
             {
-                //return _context.Loaisanphams.Include(l => l.Sanphams).ToList();
-                return _context.Loaisanphams.ToList();
+                return _context.Loaisanphams.Include(l => l.Sanphams).ToList();
+                //return _context.Loaisanphams.ToList();
             }
             catch (Exception ex)
             {

@@ -14,7 +14,9 @@ namespace TamCoffee.Models
         public string TenLoaiSanPham { get; set; } = null!;
 
         public virtual ICollection<Sanpham> Sanphams { get; set; }
-        public void printinfo() => Console.WriteLine($"MaLoaiSanPham: {MaLoaiSanPham} TenLoaiSanPham: {TenLoaiSanPham}");
-
+        public String printinfo()
+        {
+            return MaLoaiSanPham + TenLoaiSanPham;
+        }
     }
 }

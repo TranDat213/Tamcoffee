@@ -35,8 +35,8 @@ namespace TamCoffee.Models.Server
 
         public static IConfiguration config;
 
-        private static string connext_str = config.GetConnectionString("DefaultConnection")!;
-
+        //private static string connext_str = config.GetConnectionString("DefaultConnection")!;
+        private static string connext_str = "server=localhost;port=3306;database=TAMCOFFEE;uid=root;password=;";
         public String getConnection(){ return connext_str; }
         private static ServerVersion version = ServerVersion.Parse("9.1.0-mysql");
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

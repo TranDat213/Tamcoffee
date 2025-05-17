@@ -24,8 +24,8 @@ namespace TamCoffee.Tests
                            select new { sp, lsp }).FirstOrDefault();
             if (sanpham != null)
             {
-                sanpham.sp.printinfo();
-                sanpham.lsp.printinfo();
+                MessageBox.Show(sanpham.sp.printinfo());
+                MessageBox.Show(sanpham.lsp.printinfo());
             }
         }
         public static async Task readTnSanpham()
