@@ -27,7 +27,7 @@ namespace TamCoffee.Dao
             }
         }
 
-        public Taikhoan? TimTheoMa(int maTk)
+        public Taikhoan? TimTaiKhoan(int maTk)
         {
             try
             {
@@ -35,7 +35,18 @@ namespace TamCoffee.Dao
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi tìm tài khoản theo mã.", ex);
+                throw new Exception("Lỗi khi tìm tài khoản", ex);
+            }
+        }
+        public Taikhoan? TimTaiKhoan(string tentaikhoan)
+        {
+            try
+            {
+                return _context.Taikhoans.FirstOrDefault(tk => tk.TenTaiKhoan == tentaikhoan);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm tài khoản", ex);
             }
         }
 
@@ -48,7 +59,7 @@ namespace TamCoffee.Dao
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi thêm tài khoản.", ex);
+                throw new Exception("Lỗi khi thêm tài khoản.");
             }
         }
 

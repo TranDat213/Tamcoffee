@@ -1,5 +1,6 @@
 using System.Net;
-namespace TamCoffee.Models.Dto{
+namespace TamCoffee.Models.Dto
+{
     public class EmailSettings
     {
         public string FromEmail { get; set; }
