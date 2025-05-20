@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TamCoffee.Gui
+namespace TamCoffee.Gui.UserConTroll
 {
-    public partial class formTrangThaiDon : Form
+    public partial class NhanVienControll : UserControl
     {
-        public formTrangThaiDon()
+        public NhanVienControll()
         {
             InitializeComponent();
         }

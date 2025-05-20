@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TamCoffee.Gui
+namespace TamCoffee.Gui.UserConTroll
 {
-    public partial class formQLHoaDon : Form
+    public partial class SanPhamControll : UserControl
     {
-        public formQLHoaDon()
+        public SanPhamControll()
         {
             InitializeComponent();
         }

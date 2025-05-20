@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            linkLabel1 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
-            linkLabel3 = new LinkLabel();
-            linkLabel4 = new LinkLabel();
-            label5 = new Label();
-            label6 = new Label();
             label9 = new Label();
             label1 = new Label();
             button2 = new Button();
@@ -46,9 +40,9 @@
             label12 = new Label();
             label13 = new Label();
             txtMaHoaDon = new TextBox();
-            label4 = new Label();
             label7 = new Label();
             label14 = new Label();
+            btnThoat = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -58,79 +52,10 @@
             pictureBox1.Location = new Point(287, 0);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(109, 68);
+            pictureBox1.Size = new Size(91, 75);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(10, 28);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(59, 15);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Thống Kê";
-            // 
-            // linkLabel2
-            // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            linkLabel2.LinkColor = Color.Black;
-            linkLabel2.Location = new Point(10, 44);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(96, 15);
-            linkLabel2.TabIndex = 6;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Thêm Sản Phẩm";
-            // 
-            // linkLabel3
-            // 
-            linkLabel3.ActiveLinkColor = Color.Black;
-            linkLabel3.AutoSize = true;
-            linkLabel3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            linkLabel3.LinkColor = Color.Black;
-            linkLabel3.Location = new Point(10, 100);
-            linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new Size(104, 15);
-            linkLabel3.TabIndex = 7;
-            linkLabel3.TabStop = true;
-            linkLabel3.Text = "Quản Lý Hóa Đơn";
-            // 
-            // linkLabel4
-            // 
-            linkLabel4.AutoSize = true;
-            linkLabel4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            linkLabel4.LinkColor = Color.Black;
-            linkLabel4.Location = new Point(10, 115);
-            linkLabel4.Name = "linkLabel4";
-            linkLabel4.Size = new Size(65, 15);
-            linkLabel4.TabIndex = 8;
-            linkLabel4.TabStop = true;
-            linkLabel4.Text = "Trang Chủ";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(10, 14);
-            label5.Name = "label5";
-            label5.Size = new Size(42, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Chung";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(10, 85);
-            label6.Name = "label6";
-            label6.Size = new Size(51, 15);
-            label6.TabIndex = 10;
-            label6.Text = "Quản Lý";
             // 
             // label9
             // 
@@ -213,7 +138,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(475, 128);
+            label12.Location = new Point(127, 131);
             label12.Name = "label12";
             label12.Size = new Size(71, 15);
             label12.TabIndex = 24;
@@ -232,19 +157,11 @@
             // 
             // txtMaHoaDon
             // 
-            txtMaHoaDon.Location = new Point(560, 124);
+            txtMaHoaDon.Location = new Point(212, 127);
             txtMaHoaDon.Name = "txtMaHoaDon";
+            txtMaHoaDon.ReadOnly = true;
             txtMaHoaDon.Size = new Size(88, 23);
             txtMaHoaDon.TabIndex = 26;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(136, 127);
-            label4.Name = "label4";
-            label4.Size = new Size(82, 15);
-            label4.TabIndex = 27;
-            label4.Text = "Mã Nhân Viên";
             // 
             // label7
             // 
@@ -264,13 +181,23 @@
             label14.TabIndex = 28;
             label14.Text = "Số lượng";
             // 
+            // btnThoat
+            // 
+            btnThoat.Location = new Point(17, 413);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(58, 28);
+            btnThoat.TabIndex = 50;
+            btnThoat.Text = "Close";
+            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
+            // 
             // formHoaDon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 484);
+            Controls.Add(btnThoat);
             Controls.Add(label14);
-            Controls.Add(label4);
             Controls.Add(txtMaHoaDon);
             Controls.Add(label13);
             Controls.Add(label12);
@@ -280,12 +207,6 @@
             Controls.Add(label7);
             Controls.Add(button2);
             Controls.Add(label9);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(linkLabel4);
-            Controls.Add(linkLabel3);
-            Controls.Add(linkLabel2);
-            Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
@@ -300,12 +221,6 @@
 
         #endregion
         private PictureBox pictureBox1;
-        private LinkLabel linkLabel1;
-        private LinkLabel linkLabel2;
-        private LinkLabel linkLabel3;
-        private LinkLabel linkLabel4;
-        private Label label5;
-        private Label label6;
         private Label label9;
         private Label label1;
         private Button button2;
@@ -317,8 +232,8 @@
         private Label label12;
         private Label label13;
         private TextBox txtMaHoaDon;
-        private Label label4;
         private Label label7;
         private Label label14;
+        private Button btnThoat;
     }
 }

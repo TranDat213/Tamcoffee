@@ -40,6 +40,7 @@
             label5 = new Label();
             label6 = new Label();
             pictureBox1 = new PictureBox();
+            btnThoat = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // txtTenTaiKhoan
             // 
             txtTenTaiKhoan.Location = new Point(290, 178);
-            txtTenTaiKhoan.Margin = new Padding(4, 4, 4, 4);
+            txtTenTaiKhoan.Margin = new Padding(4);
             txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             txtTenTaiKhoan.Size = new Size(176, 23);
             txtTenTaiKhoan.TabIndex = 5;
@@ -75,7 +76,7 @@
             btnDangNhap.BackColor = SystemColors.WindowText;
             btnDangNhap.ForeColor = SystemColors.Menu;
             btnDangNhap.Location = new Point(305, 336);
-            btnDangNhap.Margin = new Padding(4, 4, 4, 4);
+            btnDangNhap.Margin = new Padding(4);
             btnDangNhap.Name = "btnDangNhap";
             btnDangNhap.Size = new Size(130, 26);
             btnDangNhap.TabIndex = 14;
@@ -85,7 +86,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(290, 224);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
+            textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(176, 23);
             textBox1.TabIndex = 16;
@@ -104,7 +105,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(290, 272);
-            textBox2.Margin = new Padding(4, 4, 4, 4);
+            textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(176, 23);
             textBox2.TabIndex = 19;
@@ -149,11 +150,22 @@
             pictureBox1.TabIndex = 21;
             pictureBox1.TabStop = false;
             // 
+            // btnThoat
+            // 
+            btnThoat.Location = new Point(12, 449);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(58, 28);
+            btnThoat.TabIndex = 62;
+            btnThoat.Text = "Close";
+            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
+            // 
             // formQuenMatKhau
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(712, 519);
+            Controls.Add(btnThoat);
             Controls.Add(pictureBox1);
             Controls.Add(label6);
             Controls.Add(textBox2);
@@ -166,7 +178,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "formQuenMatKhau";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuenMatKhau";
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Button btnThoat;
     }
 }

@@ -9,25 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace TamCoffee.Gui
+namespace TamCoffee.Gui.UserConTroll
 {
-    public partial class formThongKe : Form
+    public partial class ThongKeControll : UserControl
     {
-        public formThongKe()
+        public ThongKeControll()
         {
             InitializeComponent();
         }
 
-
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void ThongKeControll_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void formThongKe_Load(object sender, EventArgs e)
-        {
-
             Chart chart = new Chart();
 
             chart.Dock = DockStyle.Bottom;
@@ -45,11 +37,5 @@ namespace TamCoffee.Gui
             this.Controls.Add(chart);
             chart.Size = new Size(400, 300);
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
-

@@ -30,8 +30,7 @@ namespace TamCoffee.Gui
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Gui.formQuaLySp quaLySp = new Gui.formQuaLySp();
-            quaLySp.ShowDialog();
+           
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -41,8 +40,13 @@ namespace TamCoffee.Gui
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Gui.formHoaDon hoaDon= new Gui.formHoaDon();
+            Gui.formHoaDon hoaDon = new Gui.formHoaDon();
             hoaDon.ShowDialog();
+        }
+
+        private void btnXoaSP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TamCoffee.Gui
+namespace TamCoffee.Gui.UserConTroll
 {
-    public partial class formPhuongThucTT : Form
+    public partial class TrangThaiControll : UserControl
     {
-        public formPhuongThucTT()
+        public TrangThaiControll()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
