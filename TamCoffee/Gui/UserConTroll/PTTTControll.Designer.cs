@@ -28,40 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
+            dgvPTTT = new DataGridView();
             txtTenPTTT = new TextBox();
             txtMAPTTT = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPTTT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPTTT
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(68, 198);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(653, 254);
-            dataGridView1.TabIndex = 61;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Mã phương thức thanh toán";
-            Column1.Name = "Column1";
-            Column1.Width = 300;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tên phương thức thanh toán";
-            Column2.Name = "Column2";
-            Column2.Width = 300;
+            dgvPTTT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPTTT.Location = new Point(68, 198);
+            dgvPTTT.Name = "dgvPTTT";
+            dgvPTTT.RowTemplate.Height = 25;
+            dgvPTTT.Size = new Size(653, 254);
+            dgvPTTT.TabIndex = 61;
             // 
             // txtTenPTTT
             // 
@@ -125,7 +110,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pictureBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPTTT);
             Controls.Add(txtTenPTTT);
             Controls.Add(txtMAPTTT);
             Controls.Add(label3);
@@ -133,7 +118,8 @@
             Controls.Add(label1);
             Name = "PTTTControll";
             Size = new Size(788, 485);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += PTTTControll_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvPTTT).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -141,9 +127,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
+        private DataGridView dgvPTTT;
         private TextBox txtTenPTTT;
         private TextBox txtMAPTTT;
         private Label label3;

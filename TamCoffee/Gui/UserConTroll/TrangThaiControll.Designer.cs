@@ -28,40 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
+            dgvTrangThaiDH = new DataGridView();
             txtTenTTDH = new TextBox();
             txtMaTTDh = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTrangThaiDH).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvTrangThaiDH
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(45, 180);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(653, 254);
-            dataGridView1.TabIndex = 66;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Mã trạng thái đơn hàng";
-            Column1.Name = "Column1";
-            Column1.Width = 300;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tên trạng thái đơn hàng";
-            Column2.Name = "Column2";
-            Column2.Width = 300;
+            dgvTrangThaiDH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTrangThaiDH.Location = new Point(45, 180);
+            dgvTrangThaiDH.Name = "dgvTrangThaiDH";
+            dgvTrangThaiDH.RowTemplate.Height = 25;
+            dgvTrangThaiDH.Size = new Size(653, 254);
+            dgvTrangThaiDH.TabIndex = 66;
             // 
             // txtTenTTDH
             // 
@@ -125,7 +110,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pictureBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvTrangThaiDH);
             Controls.Add(txtTenTTDH);
             Controls.Add(txtMaTTDh);
             Controls.Add(label3);
@@ -133,7 +118,8 @@
             Controls.Add(label1);
             Name = "TrangThaiControll";
             Size = new Size(742, 459);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += TrangThaiControll_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvTrangThaiDH).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -141,9 +127,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
+        private DataGridView dgvTrangThaiDH;
         private TextBox txtTenTTDH;
         private TextBox txtMaTTDh;
         private Label label3;

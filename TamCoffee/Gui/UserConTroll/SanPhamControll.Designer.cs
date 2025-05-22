@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtMoTa = new TextBox();
             txtTenSanPham = new TextBox();
             txtMaSanPham = new TextBox();
             label9 = new Label();
@@ -36,23 +35,17 @@
             button2 = new Button();
             label6 = new Label();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            dgvSanPham = new DataGridView();
             label5 = new Label();
             txtGiaBan = new TextBox();
             label4 = new Label();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            comboBox1 = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // txtMoTa
-            // 
-            txtMoTa.Location = new Point(250, 161);
-            txtMoTa.Name = "txtMoTa";
-            txtMoTa.Size = new Size(251, 23);
-            txtMoTa.TabIndex = 62;
             // 
             // txtTenSanPham
             // 
@@ -116,15 +109,15 @@
             button1.Text = "Thêm";
             button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvSanPham
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 264);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(836, 203);
-            dataGridView1.TabIndex = 54;
+            dgvSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSanPham.Dock = DockStyle.Bottom;
+            dgvSanPham.Location = new Point(0, 264);
+            dgvSanPham.Name = "dgvSanPham";
+            dgvSanPham.RowTemplate.Height = 25;
+            dgvSanPham.Size = new Size(836, 203);
+            dgvSanPham.TabIndex = 54;
             // 
             // label5
             // 
@@ -147,9 +140,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(129, 164);
             label4.Name = "label4";
-            label4.Size = new Size(93, 15);
+            label4.Size = new Size(101, 15);
             label4.TabIndex = 51;
-            label4.Text = "Mô tả sản phẩm";
+            label4.Text = "Mã loại sản phẩm";
             // 
             // label2
             // 
@@ -184,12 +177,20 @@
             pictureBox1.TabIndex = 68;
             pictureBox1.TabStop = false;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(250, 156);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(247, 23);
+            comboBox1.TabIndex = 69;
+            // 
             // SanPhamControll
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(comboBox1);
             Controls.Add(pictureBox1);
-            Controls.Add(txtMoTa);
             Controls.Add(txtTenSanPham);
             Controls.Add(txtMaSanPham);
             Controls.Add(label9);
@@ -197,7 +198,7 @@
             Controls.Add(button2);
             Controls.Add(label6);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvSanPham);
             Controls.Add(label5);
             Controls.Add(txtGiaBan);
             Controls.Add(label4);
@@ -205,14 +206,14 @@
             Controls.Add(label1);
             Name = "SanPhamControll";
             Size = new Size(836, 467);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += SanPhamControll_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox txtMoTa;
         private TextBox txtTenSanPham;
         private TextBox txtMaSanPham;
         private Label label9;
@@ -220,12 +221,13 @@
         private Button button2;
         private Label label6;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvSanPham;
         private Label label5;
         private TextBox txtGiaBan;
         private Label label4;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private ComboBox comboBox1;
     }
 }

@@ -35,14 +35,7 @@
             radNam = new RadioButton();
             pictureBox1 = new PictureBox();
             txtTim = new TextBox();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
+            dgvDSTaiKhoan = new DataGridView();
             btnTim = new Button();
             btnSua = new Button();
             btnXoa = new Button();
@@ -60,7 +53,7 @@
             label1 = new Label();
             gBGioiTinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSTaiKhoan).BeginInit();
             SuspendLayout();
             // 
             // cboMaChucVu
@@ -134,53 +127,17 @@
             txtTim.Size = new Size(213, 23);
             txtTim.TabIndex = 66;
             // 
-            // dataGridView1
+            // dgvDSTaiKhoan
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
-            dataGridView1.Dock = DockStyle.Right;
-            dataGridView1.Location = new Point(485, 0);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(521, 475);
-            dataGridView1.TabIndex = 65;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Mã Nhân Viên";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tên Nhân Viên";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Tên Tài Khoản";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Mật Khẩu";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Giới tính";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Email";
-            Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "MÃ chức vụ";
-            Column7.Name = "Column7";
+            dgvDSTaiKhoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDSTaiKhoan.Dock = DockStyle.Right;
+            dgvDSTaiKhoan.Location = new Point(485, 0);
+            dgvDSTaiKhoan.Margin = new Padding(3, 2, 3, 2);
+            dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
+            dgvDSTaiKhoan.RowHeadersWidth = 51;
+            dgvDSTaiKhoan.RowTemplate.Height = 29;
+            dgvDSTaiKhoan.Size = new Size(521, 475);
+            dgvDSTaiKhoan.TabIndex = 65;
             // 
             // btnTim
             // 
@@ -328,7 +285,7 @@
             Controls.Add(gBGioiTinh);
             Controls.Add(pictureBox1);
             Controls.Add(txtTim);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvDSTaiKhoan);
             Controls.Add(btnTim);
             Controls.Add(btnSua);
             Controls.Add(btnXoa);
@@ -346,10 +303,11 @@
             Controls.Add(label1);
             Name = "NhanVienControll";
             Size = new Size(1006, 475);
+            Load += NhanVienControll_Load;
             gBGioiTinh.ResumeLayout(false);
             gBGioiTinh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSTaiKhoan).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -362,14 +320,7 @@
         private RadioButton radNam;
         private PictureBox pictureBox1;
         private TextBox txtTim;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
+        private DataGridView dgvDSTaiKhoan;
         private Button btnTim;
         private Button btnSua;
         private Button btnXoa;

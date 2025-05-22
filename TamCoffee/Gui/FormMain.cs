@@ -19,6 +19,7 @@ namespace TamCoffee.Gui
         private Button btnQLTT;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button btnQLLoaiSP;
         private LinkLabel linkLabel3;
 
         private void InitializeComponent()
@@ -35,6 +36,7 @@ namespace TamCoffee.Gui
             btnQLPTTT = new Button();
             btnQLTT = new Button();
             pictureBox2 = new PictureBox();
+            btnQLLoaiSP = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -99,9 +101,9 @@ namespace TamCoffee.Gui
             // 
             btnQLNV.Location = new Point(12, 72);
             btnQLNV.Name = "btnQLNV";
-            btnQLNV.Size = new Size(122, 37);
+            btnQLNV.Size = new Size(134, 37);
             btnQLNV.TabIndex = 0;
-            btnQLNV.Text = "Quản lý Nhân viên";
+            btnQLNV.Text = "Quản lý tài khoản";
             btnQLNV.UseVisualStyleBackColor = true;
             btnQLNV.Click += button1_Click_1;
             // 
@@ -109,7 +111,7 @@ namespace TamCoffee.Gui
             // 
             btnQLHD.Location = new Point(12, 158);
             btnQLHD.Name = "btnQLHD";
-            btnQLHD.Size = new Size(122, 37);
+            btnQLHD.Size = new Size(134, 37);
             btnQLHD.TabIndex = 30;
             btnQLHD.Text = "Quản lý Hóa đơn";
             btnQLHD.UseVisualStyleBackColor = true;
@@ -119,7 +121,7 @@ namespace TamCoffee.Gui
             // 
             btnQLSP.Location = new Point(12, 115);
             btnQLSP.Name = "btnQLSP";
-            btnQLSP.Size = new Size(122, 37);
+            btnQLSP.Size = new Size(134, 37);
             btnQLSP.TabIndex = 31;
             btnQLSP.Text = "Quản lý Sản phẩm\r\n";
             btnQLSP.UseVisualStyleBackColor = true;
@@ -129,7 +131,7 @@ namespace TamCoffee.Gui
             // 
             btnThongKE.Location = new Point(12, 201);
             btnThongKE.Name = "btnThongKE";
-            btnThongKE.Size = new Size(122, 37);
+            btnThongKE.Size = new Size(134, 37);
             btnThongKE.TabIndex = 32;
             btnThongKE.Text = "Thống kê";
             btnThongKE.UseVisualStyleBackColor = true;
@@ -139,7 +141,7 @@ namespace TamCoffee.Gui
             // 
             btnQLPTTT.Location = new Point(12, 244);
             btnQLPTTT.Name = "btnQLPTTT";
-            btnQLPTTT.Size = new Size(122, 37);
+            btnQLPTTT.Size = new Size(134, 37);
             btnQLPTTT.TabIndex = 33;
             btnQLPTTT.Text = "Quản lý PTTT";
             btnQLPTTT.UseVisualStyleBackColor = true;
@@ -149,7 +151,7 @@ namespace TamCoffee.Gui
             // 
             btnQLTT.Location = new Point(12, 287);
             btnQLTT.Name = "btnQLTT";
-            btnQLTT.Size = new Size(122, 37);
+            btnQLTT.Size = new Size(134, 37);
             btnQLTT.TabIndex = 1;
             btnQLTT.Text = "Quản lýTrạng thái ĐH";
             btnQLTT.UseVisualStyleBackColor = true;
@@ -168,9 +170,20 @@ namespace TamCoffee.Gui
             pictureBox2.TabIndex = 68;
             pictureBox2.TabStop = false;
             // 
+            // btnQLLoaiSP
+            // 
+            btnQLLoaiSP.Location = new Point(8, 330);
+            btnQLLoaiSP.Name = "btnQLLoaiSP";
+            btnQLLoaiSP.Size = new Size(138, 37);
+            btnQLLoaiSP.TabIndex = 69;
+            btnQLLoaiSP.Text = "Quản lýLoại sản Phẩm";
+            btnQLLoaiSP.UseVisualStyleBackColor = true;
+            btnQLLoaiSP.Click += btnQLLoaiSP_Click;
+            // 
             // FormMain
             // 
             ClientSize = new Size(1260, 605);
+            Controls.Add(btnQLLoaiSP);
             Controls.Add(pictureBox2);
             Controls.Add(btnQLTT);
             Controls.Add(btnQLPTTT);
@@ -202,7 +215,7 @@ namespace TamCoffee.Gui
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         { }
-          
+
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -255,6 +268,11 @@ namespace TamCoffee.Gui
         private void btnQLPTTT_Click(object sender, EventArgs e)
         {
             addUserControl(new PTTTControll());
+        }
+
+        private void btnQLLoaiSP_Click(object sender, EventArgs e)
+        {
+            addUserControl(new LoaiSanPhamControll());
         }
     }
 }

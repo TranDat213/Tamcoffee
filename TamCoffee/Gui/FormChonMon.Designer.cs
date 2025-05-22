@@ -32,14 +32,10 @@
             pictureBox1 = new PictureBox();
             menuStrip1 = new MenuStrip();
             btnXemHD = new Button();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            dgvDSMon = new DataGridView();
             label1 = new Label();
             label2 = new Label();
-            dataGridView2 = new DataGridView();
+            dgvChiTietGIoHang = new DataGridView();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
@@ -51,10 +47,10 @@
             btnXoaSP = new Button();
             btnThoat = new Button();
             btnLuu = new Button();
-            comboBox1 = new ComboBox();
+            cboTimLoaiMon = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSMon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvChiTietGIoHang).BeginInit();
             SuspendLayout();
             // 
             // linkLabel1
@@ -93,6 +89,7 @@
             menuStrip1.Size = new Size(1167, 24);
             menuStrip1.TabIndex = 38;
             menuStrip1.Text = "menuStrip1";
+           
             // 
             // btnXemHD
             // 
@@ -104,67 +101,44 @@
             btnXemHD.UseVisualStyleBackColor = true;
             btnXemHD.Click += button15_Click;
             // 
-            // dataGridView1
+            // dgvDSMon
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(44, 111);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(848, 193);
-            dataGridView1.TabIndex = 50;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Mã sản phẩm ";
-            Column1.Name = "Column1";
-            Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Ten sản phẩm";
-            Column2.Name = "Column2";
-            Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Giá";
-            Column3.Name = "Column3";
-            Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Mã loại";
-            Column4.Name = "Column4";
-            Column4.Width = 200;
+            dgvDSMon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDSMon.Location = new Point(44, 110);
+            dgvDSMon.Name = "dgvDSMon";
+            dgvDSMon.RowTemplate.Height = 25;
+            dgvDSMon.Size = new Size(848, 193);
+            dgvDSMon.TabIndex = 50;
+            dgvDSMon.CellClick += dgvDSMon_CellClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(69, 73);
             label1.Name = "label1";
-            label1.Size = new Size(90, 15);
+            label1.Size = new Size(128, 21);
             label1.TabIndex = 51;
             label1.Text = "Danh sách món";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(755, 74);
+            label2.Location = new Point(782, 73);
             label2.Name = "label2";
-            label2.Size = new Size(75, 15);
+            label2.Size = new Size(76, 15);
             label2.TabIndex = 52;
-            label2.Text = "Tìm mã món";
+            label2.Text = "Lọc loại món";
             // 
-            // dataGridView2
+            // dgvChiTietGIoHang
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column5, Column6, Column7, Column8, Column9 });
-            dataGridView2.Location = new Point(44, 414);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(848, 150);
-            dataGridView2.TabIndex = 54;
+            dgvChiTietGIoHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvChiTietGIoHang.Columns.AddRange(new DataGridViewColumn[] { Column5, Column6, Column7, Column8, Column9 });
+            dgvChiTietGIoHang.Location = new Point(44, 414);
+            dgvChiTietGIoHang.Name = "dgvChiTietGIoHang";
+            dgvChiTietGIoHang.RowTemplate.Height = 25;
+            dgvChiTietGIoHang.Size = new Size(848, 150);
+            dgvChiTietGIoHang.TabIndex = 54;
             // 
             // Column5
             // 
@@ -237,6 +211,7 @@
             btnThoat.TabIndex = 60;
             btnThoat.Text = "Close";
             btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnLuu
             // 
@@ -247,30 +222,31 @@
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cboTimLoaiMon
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(887, 70);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 62;
+            cboTimLoaiMon.FormattingEnabled = true;
+            cboTimLoaiMon.Location = new Point(887, 70);
+            cboTimLoaiMon.Name = "cboTimLoaiMon";
+            cboTimLoaiMon.Size = new Size(121, 23);
+            cboTimLoaiMon.TabIndex = 62;
+            cboTimLoaiMon.SelectedIndexChanged += cboTimLoaiMon_SelectedIndexChanged;
             // 
             // FormChonMon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1167, 606);
-            Controls.Add(comboBox1);
+            Controls.Add(cboTimLoaiMon);
             Controls.Add(btnLuu);
             Controls.Add(btnThoat);
             Controls.Add(btnXoaSP);
             Controls.Add(btnChonSP);
             Controls.Add(textBox2);
             Controls.Add(label4);
-            Controls.Add(dataGridView2);
+            Controls.Add(dgvChiTietGIoHang);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvDSMon);
             Controls.Add(btnXemHD);
             Controls.Add(linkLabel1);
             Controls.Add(pictureBox1);
@@ -282,8 +258,8 @@
             WindowState = FormWindowState.Maximized;
             Load += FormChonMon_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSMon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvChiTietGIoHang).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,14 +269,10 @@
         private PictureBox pictureBox1;
         private MenuStrip menuStrip1;
         private Button btnXemHD;
-        private DataGridView dataGridView1;
+        private DataGridView dgvDSMon;
         private Label label1;
         private Label label2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridView dataGridView2;
+        private DataGridView dgvChiTietGIoHang;
         private Label label4;
         private TextBox textBox2;
         private Button btnChonSP;
@@ -312,6 +284,6 @@
         private Button btnXoaSP;
         private Button btnThoat;
         private Button btnLuu;
-        private ComboBox comboBox1;
+        private ComboBox cboTimLoaiMon;
     }
 }

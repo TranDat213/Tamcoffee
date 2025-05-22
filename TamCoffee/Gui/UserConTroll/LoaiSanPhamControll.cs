@@ -13,29 +13,28 @@ using TamCoffee.Models.Server;
 
 namespace TamCoffee.Gui.UserConTroll
 {
-    
-    public partial class TrangThaiControll : UserControl
+    public partial class LoaiSanPhamControll : UserControl
     {
         private static TAMCOFFEEContext _context;
-        public TrangThaiControll()
+        public LoaiSanPhamControll()
         {
             InitializeComponent();
         }
 
-        private void TrangThaiControll_Load(object sender, EventArgs e)
+        private void LoaiSanPhamControll_Load(object sender, EventArgs e)
         {
-            LoadTTDH();
+            LoadDSLoaiSP();
         }
-        private void LoadTTDH()
+        private void LoadDSLoaiSP()
         {
-            TrangThaiDonHangDao dao = new TrangThaiDonHangDao();
-            List<Trangthaidonhang> list=dao.GetAllTrangThaiDH();
-            var viewlist = list.Select(s => new
+            LoaiSanPhamDao dao= new LoaiSanPhamDao();
+            List<Loaisanpham> list = dao.LayTatCaLoai();
+            var viewlist = list.Select(l => new
             {
-                s.MaTrangThaiDh,
-                s.TenTrangThai
+                l.MaLoaiSanPham,
+                l.TenLoaiSanPham
             }).ToList();
-            dgvTrangThaiDH.DataSource = viewlist;
+            dgvLoaiSanPham.DataSource = viewlist;
         }
     }
 }
