@@ -131,12 +131,12 @@
             // 
             dgvDSTaiKhoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDSTaiKhoan.Dock = DockStyle.Right;
-            dgvDSTaiKhoan.Location = new Point(485, 0);
+            dgvDSTaiKhoan.Location = new Point(457, 0);
             dgvDSTaiKhoan.Margin = new Padding(3, 2, 3, 2);
             dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
             dgvDSTaiKhoan.RowHeadersWidth = 51;
             dgvDSTaiKhoan.RowTemplate.Height = 29;
-            dgvDSTaiKhoan.Size = new Size(521, 475);
+            dgvDSTaiKhoan.Size = new Size(676, 475);
             dgvDSTaiKhoan.TabIndex = 65;
             // 
             // btnTim
@@ -302,7 +302,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "NhanVienControll";
-            Size = new Size(1006, 475);
+            Size = new Size(1133, 475);
             Load += NhanVienControll_Load;
             gBGioiTinh.ResumeLayout(false);
             gBGioiTinh.PerformLayout();

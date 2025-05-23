@@ -20,6 +20,8 @@ namespace TamCoffee.Gui
         private int vtri = 0;
         SanphamDao spDao = new SanphamDao();
         Sanpham sp = new Sanpham();
+        private HoaDonTamDao hdtamdao = new HoaDonTamDao();
+        private HoaDonTam _hdtam=new HoaDonTam();
         public FormChonMon()
         {
             InitializeComponent();
@@ -77,7 +79,7 @@ namespace TamCoffee.Gui
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Gui.formHoaDon hoaDon = new Gui.formHoaDon();
+            Gui.formHoaDon hoaDon = new Gui.formHoaDon(_hdtam.DonHangTam.MaDonHang);
             hoaDon.ShowDialog();
         }
 
@@ -142,6 +144,43 @@ namespace TamCoffee.Gui
             catch (Exception ex) { }
         }
 
-       
+        private void btnChonSP_Click(object sender, EventArgs e)
+        {
+            if (dgvDSMon.CurrentRow != null && !string.IsNullOrEmpty(txtSoLuong.Text))
+            {
+                var row = dgvDSMon.CurrentRow;
+                int maSp = Convert.ToInt32(row.Cells["MaSanPham"].Value);
+                string tenSp = row.Cells["TenSanPham"].Value.ToString();
+                float gia = float.Parse(row.Cells["GiaSp"].Value.ToString());
+                int soluong = int.Parse(txtSoLuong.Text);
+                int chiphikhac= string.IsNullOrWhiteSpace(txtChiPhiKhac.Text) ? 0 : Convert.ToInt32(txtChiPhiKhac.Text);
+                float thanhTien = gia * soluong+chiphikhac;
+
+                var chiTiet = new Chitiethoadon(maSp, 0, soluong);
+                hdtamdao.ThemMonTam(chiTiet);
+                dgvChiTietGIoHang.Rows.Add(maSp, tenSp, gia, soluong,chiphikhac, thanhTien);
+
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HoaDonDao hddao= new HoaDonDao();
+                int chiphikhac = 0;
+                int.TryParse(txtChiPhiKhac.Text, out chiphikhac);
+                var dschitiethd = _hdtam.DanhSachChiTiet;
+                bool result=hddao.LuuHDTVaoDatabase(dschitiethd, chiphikhac);
+                if (result)
+                    MessageBox.Show("Lưu hóa đơn thành công!");
+                else
+                    MessageBox.Show("Lưu hóa đơn thất bại!");
+
+            }
+            catch (Exception ex) {
+               
+            }
+        }
     }
 }

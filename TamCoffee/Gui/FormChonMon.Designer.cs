@@ -36,18 +36,21 @@
             label1 = new Label();
             label2 = new Label();
             dgvChiTietGIoHang = new DataGridView();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtSoLuong = new TextBox();
             btnChonSP = new Button();
             btnXoaSP = new Button();
             btnThoat = new Button();
             btnLuu = new Button();
             cboTimLoaiMon = new ComboBox();
+            label3 = new Label();
+            txtChiPhiKhac = new TextBox();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDSMon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvChiTietGIoHang).BeginInit();
@@ -89,7 +92,6 @@
             menuStrip1.Size = new Size(1167, 24);
             menuStrip1.TabIndex = 38;
             menuStrip1.Text = "menuStrip1";
-           
             // 
             // btnXemHD
             // 
@@ -133,40 +135,12 @@
             // dgvChiTietGIoHang
             // 
             dgvChiTietGIoHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvChiTietGIoHang.Columns.AddRange(new DataGridViewColumn[] { Column5, Column6, Column7, Column8, Column9 });
+            dgvChiTietGIoHang.Columns.AddRange(new DataGridViewColumn[] { Column5, Column6, Column7, Column8, Column1, Column9 });
             dgvChiTietGIoHang.Location = new Point(44, 414);
             dgvChiTietGIoHang.Name = "dgvChiTietGIoHang";
             dgvChiTietGIoHang.RowTemplate.Height = 25;
             dgvChiTietGIoHang.Size = new Size(848, 150);
             dgvChiTietGIoHang.TabIndex = 54;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Mã sản phẩm";
-            Column5.Name = "Column5";
-            Column5.Width = 200;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Tên sản phẩm";
-            Column6.Name = "Column6";
-            Column6.Width = 200;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Giá";
-            Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Số lượng";
-            Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Thành tiền";
-            Column9.Name = "Column9";
-            Column9.Width = 200;
             // 
             // label4
             // 
@@ -177,12 +151,12 @@
             label4.TabIndex = 56;
             label4.Text = "Số lượng";
             // 
-            // textBox2
+            // txtSoLuong
             // 
-            textBox2.Location = new Point(104, 351);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 57;
+            txtSoLuong.Location = new Point(104, 351);
+            txtSoLuong.Name = "txtSoLuong";
+            txtSoLuong.Size = new Size(100, 23);
+            txtSoLuong.TabIndex = 57;
             // 
             // btnChonSP
             // 
@@ -192,6 +166,7 @@
             btnChonSP.TabIndex = 58;
             btnChonSP.Text = "Chọn";
             btnChonSP.UseVisualStyleBackColor = true;
+            btnChonSP.Click += btnChonSP_Click;
             // 
             // btnXoaSP
             // 
@@ -221,6 +196,7 @@
             btnLuu.TabIndex = 61;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Click += btnLuu_Click;
             // 
             // cboTimLoaiMon
             // 
@@ -231,17 +207,68 @@
             cboTimLoaiMon.TabIndex = 62;
             cboTimLoaiMon.SelectedIndexChanged += cboTimLoaiMon_SelectedIndexChanged;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(263, 354);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 15);
+            label3.TabIndex = 63;
+            label3.Text = "Chi phí khác";
+            // 
+            // txtChiPhiKhac
+            // 
+            txtChiPhiKhac.Location = new Point(342, 351);
+            txtChiPhiKhac.Name = "txtChiPhiKhac";
+            txtChiPhiKhac.Size = new Size(100, 23);
+            txtChiPhiKhac.TabIndex = 64;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Mã sản phẩm";
+            Column5.Name = "Column5";
+            Column5.Width = 200;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Tên sản phẩm";
+            Column6.Name = "Column6";
+            Column6.Width = 200;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Giá";
+            Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Số lượng";
+            Column8.Name = "Column8";
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Chi phí khác";
+            Column1.Name = "Column1";
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Thành tiền";
+            Column9.Name = "Column9";
+            Column9.Width = 200;
+            // 
             // FormChonMon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1167, 606);
+            Controls.Add(txtChiPhiKhac);
+            Controls.Add(label3);
             Controls.Add(cboTimLoaiMon);
             Controls.Add(btnLuu);
             Controls.Add(btnThoat);
             Controls.Add(btnXoaSP);
             Controls.Add(btnChonSP);
-            Controls.Add(textBox2);
+            Controls.Add(txtSoLuong);
             Controls.Add(label4);
             Controls.Add(dgvChiTietGIoHang);
             Controls.Add(label2);
@@ -274,16 +301,19 @@
         private Label label2;
         private DataGridView dgvChiTietGIoHang;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtSoLuong;
         private Button btnChonSP;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
         private Button btnXoaSP;
         private Button btnThoat;
         private Button btnLuu;
         private ComboBox cboTimLoaiMon;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column9;
+        private Label label3;
+        private TextBox txtChiPhiKhac;
     }
 }

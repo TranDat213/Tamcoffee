@@ -31,5 +31,53 @@ namespace TamCoffee.Dao
                 throw new Exception("Lỗi khi lấy danh sách hóa đơn!");
             }
         }
+        public bool AddHoaDon(Donhang hoadon)
+        {
+            try
+            {
+                _context.Donhangs.Add(hoadon);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi thêm hóa đơn: {ex.Message}");
+            }
+        }
+        public bool AddChiTiethoaDon(Donhang donhang, Chitiethoadon chitiet)
+        {
+            try
+            {
+                // Thêm chi tiết hóa đơn vào hóa đơn
+                donhang.Chitiethoadons.Add(chitiet);
+                // Cập nhật hóa đơn
+                _context.Donhangs.Update(donhang);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi thêm chi tiết hóa đơn: {ex.Message}");
+            }
+        }
+        public bool LuuHDTVaoDatabase(List<Chitiethoadon> chittiets, int chiphikhac, int maTk = 1, int maPtt = 1, int matt = 1)
+        {
+            try
+            {
+                Donhang dh = new Donhang
+                {
+                    NgayLapHoaDon = DateTime.Now,
+                    Chitiethoadons = chittiets,
+                    ChiPhiKhac = chiphikhac,
+                    MaTk = maTk,
+                    MaPttt = maPtt,
+                    MaTrangThaiDh = matt
+                };
+                _context.Donhangs.Add(dh);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lưu hóa đơn vào database: {ex.Message}");
+            }
+        }
     }
 }
