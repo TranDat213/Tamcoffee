@@ -21,7 +21,7 @@ namespace TamCoffee.Gui
         SanphamDao spDao = new SanphamDao();
         Sanpham sp = new Sanpham();
         private HoaDonTamDao hdtamdao = new HoaDonTamDao();
-        private HoaDonTam _hdtam=new HoaDonTam();
+        private HoaDonTam _hdtam = new HoaDonTam();
         public FormChonMon()
         {
             InitializeComponent();
@@ -79,6 +79,7 @@ namespace TamCoffee.Gui
 
         private void button15_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Mã đơn hàng là:" + _hdtam.DonHangTam.MaDonHang);
             Gui.formHoaDon hoaDon = new Gui.formHoaDon(_hdtam.DonHangTam.MaDonHang);
             hoaDon.ShowDialog();
         }
@@ -151,14 +152,14 @@ namespace TamCoffee.Gui
                 var row = dgvDSMon.CurrentRow;
                 int maSp = Convert.ToInt32(row.Cells["MaSanPham"].Value);
                 string tenSp = row.Cells["TenSanPham"].Value.ToString();
-                float gia = float.Parse(row.Cells["GiaSp"].Value.ToString());
+                decimal gia = decimal.Parse(row.Cells["GiaSp"].Value.ToString());
                 int soluong = int.Parse(txtSoLuong.Text);
-                int chiphikhac= string.IsNullOrWhiteSpace(txtChiPhiKhac.Text) ? 0 : Convert.ToInt32(txtChiPhiKhac.Text);
-                float thanhTien = gia * soluong+chiphikhac;
+
+                decimal thanhTien = gia * soluong;
 
                 var chiTiet = new Chitiethoadon(maSp, 0, soluong);
                 hdtamdao.ThemMonTam(chiTiet);
-                dgvChiTietGIoHang.Rows.Add(maSp, tenSp, gia, soluong,chiphikhac, thanhTien);
+                dgvChiTietGIoHang.Rows.Add(maSp, tenSp, gia, soluong, thanhTien);
 
             }
         }
@@ -167,20 +168,30 @@ namespace TamCoffee.Gui
         {
             try
             {
-                HoaDonDao hddao= new HoaDonDao();
-                int chiphikhac = 0;
-                int.TryParse(txtChiPhiKhac.Text, out chiphikhac);
+                HoaDonDao hddao = new HoaDonDao();
+
                 var dschitiethd = _hdtam.DanhSachChiTiet;
-                bool result=hddao.LuuHDTVaoDatabase(dschitiethd, chiphikhac);
-                if (result)
+                var donhangMoi = hddao.LuuHDTVaoDatabase(dschitiethd);
+
+                if (donhangMoi != null)
+                {
+                    _hdtam.DonHangTam = donhangMoi;
                     MessageBox.Show("Lưu hóa đơn thành công!");
+                   
+                }
                 else
                     MessageBox.Show("Lưu hóa đơn thất bại!");
 
             }
-            catch (Exception ex) {
-               
+            catch (Exception ex)
+            {
+
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

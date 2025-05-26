@@ -9,8 +9,9 @@ using TamCoffee.Models.Server;
 
 namespace TamCoffee.Dao
 {
-    internal class HoaDonDao
+    public class HoaDonDao
     {
+        HoaDonTam hdtam=new HoaDonTam();
         private static TAMCOFFEEContext _context;
         public HoaDonDao()
         {
@@ -58,21 +59,29 @@ namespace TamCoffee.Dao
                 throw new Exception($"Lỗi khi thêm chi tiết hóa đơn: {ex.Message}");
             }
         }
-        public bool LuuHDTVaoDatabase(List<Chitiethoadon> chittiets, int chiphikhac, int maTk = 1, int maPtt = 1, int matt = 1)
+        public Donhang LuuHDTVaoDatabase(List<Chitiethoadon> chittiets, int chiphikhac=0, int maTk = 1, int maPtt = 1, int matt = 1)
         {
             try
             {
+
                 Donhang dh = new Donhang
                 {
                     NgayLapHoaDon = DateTime.Now,
-                    Chitiethoadons = chittiets,
+                    Chitiethoadons = new List<Chitiethoadon>(),
                     ChiPhiKhac = chiphikhac,
                     MaTk = maTk,
                     MaPttt = maPtt,
                     MaTrangThaiDh = matt
                 };
                 _context.Donhangs.Add(dh);
-                return _context.SaveChanges() > 0;
+                _context.SaveChanges() ;
+                foreach(var ct in chittiets)
+                {
+                    ct.MaDonHang = dh.MaDonHang;
+                    _context.Chitiethoadons.Add(ct);
+                }
+                _context.SaveChanges();
+                return dh;
             }
             catch (Exception ex)
             {

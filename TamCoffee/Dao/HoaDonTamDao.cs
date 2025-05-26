@@ -20,7 +20,7 @@ namespace TamCoffee.Dao
         {
             return _hoaDonTam.DanhSachChiTiet;
         }
-        public bool LuuHDTVaoDatabase(List<Chitiethoadon> chittiets,int chiphikhac,int maTk=1,int maPtt=1,int matt=1)
+        public bool LuuHDTVaoDatabase(List<Chitiethoadon> chittiets,int chiphikhac=0,int maTk=1,int maPtt=1,int matt=1)
         {
             try
             {

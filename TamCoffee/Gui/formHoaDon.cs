@@ -20,12 +20,9 @@ namespace TamCoffee.Gui
             InitializeComponent();
             this.maDonhang = maDonhang;
         }
-        public formHoaDon()
-        {
-            InitializeComponent();
-        }
 
-      
+
+
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -34,23 +31,61 @@ namespace TamCoffee.Gui
 
         private void formHoaDon_Load(object sender, EventArgs e)
         {
-            using (var context = new TAMCOFFEEContext())
+            LoadThongTinDonHang(maDonhang);
+        }
+        private void LoadThongTinDonHang(int madh)
+        {
+            var _context = new TAMCOFFEEContext();
+            var hoadon = _context.Donhangs
+                .Include(h => h.MaTkNavigation)
+                .Include(h => h.MaPtttNavigation)
+                .Include(h => h.MaTrangThaiDhNavigation)
+                .Include(h => h.Chitiethoadons)
+                    .ThenInclude(ct => ct.MaSanPhamNavigation)
+                .FirstOrDefault(h => h.MaDonHang == madh);
+            if (hoadon == null)
             {
-                var donhang=context.Donhangs
-                    .Include(d=>d.Chitiethoadons)
-                    .FirstOrDefault(d=>d.MaDonHang==maDonhang);
+                MessageBox.Show("Không tìm thấy hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                if (donhang != null) 
-                {
-                    txtMaHoaDon.Text=donhang.MaDonHang.ToString();
-                    float tongTien=0;
-                    foreach(var item in donhang.Chitiethoadons)
-                    {
-                        var sanPham = context.Sanphams.Find(item.MaSanPham);
-                        dgvHoaDon.Rows.Add(item.MaSanPham);
-                    }
-                }
             }
+            // Gán thông tin hóa đơn vào các Label/TextBox
+            lbMaHD.Text = hoadon.MaDonHang.ToString();
+            lbNgayLap.Text = hoadon.NgayLapHoaDon.ToString("dd/MM/yyyy HH:mm:ss");
+            lbTaiKhoan.Text = hoadon.MaTkNavigation?.TenTaiKhoan ?? "Nguyễn Đạt";
+            lbPhuongThuc.Text = hoadon.MaPtttNavigation?.TenPhuongThuc ?? "Tiền mặt";
+            lbTrangThai.Text = hoadon.MaTrangThaiDhNavigation?.TenTrangThai ?? "Đã mua";
+            
+
+            // Xóa danh sách món cũ nếu có
+            flpChiTiet.Controls.Clear();
+            decimal tongTien = 0;
+            // Duyệt danh sách món và thêm vào FlowLayoutPanel
+            foreach (var ct in hoadon.Chitiethoadons)
+            {
+                string ten = ct.MaSanPhamNavigation?.TenSanPham ?? "Cà phê đen";
+                int soluong = Int32.Parse(ct.SoLuong.ToString());
+                decimal gia = ct.MaSanPhamNavigation?.GiaSp ?? 0;
+                decimal thanhtien = soluong * gia;
+                Label lbl = new Label();
+                lbl.AutoSize = true;
+                lbl.Font = new Font("Courier New", 10, FontStyle.Regular);
+                lbl.Text = $"{ten,-20} {soluong,3} {gia,12:N0}  {thanhtien,12:N0} VNĐ";
+                flpChiTiet.Controls.Add(lbl);
+
+                tongTien += thanhtien;
+            }
+
+            lblTongTien.Text = $"{tongTien:N0}VNĐ";
+        }
+
+        private void flpChiTiet_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,15 +34,11 @@
             radioButton2 = new RadioButton();
             textBox1 = new TextBox();
             radioButton1 = new RadioButton();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            dgvDSHoaDon = new DataGridView();
             label6 = new Label();
             pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSHoaDon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -106,39 +102,15 @@
             radioButton1.Text = "Tìm mã Hóa Đơn";
             radioButton1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvDSHoaDon
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 258);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(768, 216);
-            dataGridView1.TabIndex = 40;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "MaNhanVien";
-            Column1.Name = "Column1";
-            Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Mã Hóa Đơn";
-            Column2.Name = "Column2";
-            Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Thời gian";
-            Column3.Name = "Column3";
-            Column3.Width = 250;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Tổng tiền";
-            Column4.Name = "Column4";
+            dgvDSHoaDon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDSHoaDon.Dock = DockStyle.Bottom;
+            dgvDSHoaDon.Location = new Point(0, 248);
+            dgvDSHoaDon.Name = "dgvDSHoaDon";
+            dgvDSHoaDon.RowTemplate.Height = 25;
+            dgvDSHoaDon.Size = new Size(768, 226);
+            dgvDSHoaDon.TabIndex = 40;
             // 
             // label6
             // 
@@ -170,13 +142,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvDSHoaDon);
             Controls.Add(label6);
             Name = "HoaDonControll";
             Size = new Size(768, 474);
+            Load += HoaDonControll_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSHoaDon).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -190,11 +163,7 @@
         private RadioButton radioButton2;
         private TextBox textBox1;
         private RadioButton radioButton1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
+        private DataGridView dgvDSHoaDon;
         private Label label6;
         private PictureBox pictureBox1;
     }
