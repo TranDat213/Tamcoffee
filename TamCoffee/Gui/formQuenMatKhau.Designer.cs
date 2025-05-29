@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formQuenMatKhau));
             label1 = new Label();
-            txtTenTaiKhoan = new TextBox();
+            txEmail = new TextBox();
             btnDangNhap = new Button();
             label6 = new Label();
             pictureBox1 = new PictureBox();
@@ -48,25 +48,26 @@
             label1.TabIndex = 0;
             label1.Text = "Email Đăng Ký";
             // 
-            // txtTenTaiKhoan
+            // txEmail
             // 
-            txtTenTaiKhoan.Location = new Point(320, 316);
-            txtTenTaiKhoan.Margin = new Padding(5, 5, 5, 5);
-            txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            txtTenTaiKhoan.Size = new Size(201, 27);
-            txtTenTaiKhoan.TabIndex = 5;
+            txEmail.Location = new Point(320, 316);
+            txEmail.Margin = new Padding(5);
+            txEmail.Name = "txEmail";
+            txEmail.Size = new Size(201, 27);
+            txEmail.TabIndex = 5;
             // 
             // btnDangNhap
             // 
             btnDangNhap.BackColor = SystemColors.WindowText;
             btnDangNhap.ForeColor = SystemColors.Menu;
             btnDangNhap.Location = new Point(349, 448);
-            btnDangNhap.Margin = new Padding(5, 5, 5, 5);
+            btnDangNhap.Margin = new Padding(5);
             btnDangNhap.Name = "btnDangNhap";
             btnDangNhap.Size = new Size(149, 35);
             btnDangNhap.TabIndex = 14;
             btnDangNhap.Text = "Gửi";
             btnDangNhap.UseVisualStyleBackColor = false;
+            btnDangNhap.Click += btnDangNhap_Click;
             // 
             // label6
             // 
@@ -110,10 +111,10 @@
             Controls.Add(pictureBox1);
             Controls.Add(label6);
             Controls.Add(btnDangNhap);
-            Controls.Add(txtTenTaiKhoan);
+            Controls.Add(txEmail);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "formQuenMatKhau";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuenMatKhau";
@@ -126,7 +127,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTenTaiKhoan;
+        private System.Windows.Forms.TextBox txEmail;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;

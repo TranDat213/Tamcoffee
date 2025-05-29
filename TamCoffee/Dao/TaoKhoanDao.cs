@@ -38,6 +38,17 @@ namespace TamCoffee.Dao
                 throw new Exception("Lỗi khi tìm tài khoản", ex);
             }
         }
+        public Taikhoan? TimTaiKhoan_email(String email)
+        {
+            try
+            {
+                return _context.Taikhoans.FirstOrDefault(tk => tk.Email == email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm tài khoản", ex);
+            }
+        }
         public Taikhoan? TimTaiKhoan(string tentaikhoan)
         {
             try
