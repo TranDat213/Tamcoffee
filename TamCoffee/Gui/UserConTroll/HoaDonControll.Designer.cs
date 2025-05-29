@@ -49,9 +49,11 @@
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(209, 57);
+            groupBox1.Location = new Point(583, 45);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(294, 142);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(336, 189);
             groupBox1.TabIndex = 41;
             groupBox1.TabStop = false;
             groupBox1.Text = "Tìm Hóa Đơn";
@@ -59,16 +61,18 @@
             // cboMaHoaDon
             // 
             cboMaHoaDon.FormattingEnabled = true;
-            cboMaHoaDon.Location = new Point(152, 34);
+            cboMaHoaDon.Location = new Point(174, 45);
+            cboMaHoaDon.Margin = new Padding(3, 4, 3, 4);
             cboMaHoaDon.Name = "cboMaHoaDon";
-            cboMaHoaDon.Size = new Size(121, 23);
+            cboMaHoaDon.Size = new Size(138, 28);
             cboMaHoaDon.TabIndex = 51;
             // 
             // button1
             // 
-            button1.Location = new Point(23, 102);
+            button1.Location = new Point(26, 136);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(91, 35);
+            button1.Size = new Size(104, 47);
             button1.TabIndex = 38;
             button1.Text = "Tìm kiếm";
             button1.UseVisualStyleBackColor = true;
@@ -76,9 +80,10 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(18, 74);
+            radioButton2.Location = new Point(21, 99);
+            radioButton2.Margin = new Padding(3, 4, 3, 4);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(120, 19);
+            radioButton2.Size = new Size(147, 24);
             radioButton2.TabIndex = 1;
             radioButton2.TabStop = true;
             radioButton2.Text = "Tìm mã nhân viên";
@@ -86,17 +91,19 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(140, 73);
+            textBox1.Location = new Point(160, 97);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 23);
+            textBox1.Size = new Size(151, 27);
             textBox1.TabIndex = 37;
             // 
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(18, 38);
+            radioButton1.Location = new Point(21, 51);
+            radioButton1.Margin = new Padding(3, 4, 3, 4);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(115, 19);
+            radioButton1.Size = new Size(144, 24);
             radioButton1.TabIndex = 0;
             radioButton1.TabStop = true;
             radioButton1.Text = "Tìm mã Hóa Đơn";
@@ -106,10 +113,12 @@
             // 
             dgvDSHoaDon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDSHoaDon.Dock = DockStyle.Bottom;
-            dgvDSHoaDon.Location = new Point(0, 248);
+            dgvDSHoaDon.Location = new Point(0, 351);
+            dgvDSHoaDon.Margin = new Padding(3, 4, 3, 4);
             dgvDSHoaDon.Name = "dgvDSHoaDon";
+            dgvDSHoaDon.RowHeadersWidth = 51;
             dgvDSHoaDon.RowTemplate.Height = 25;
-            dgvDSHoaDon.Size = new Size(768, 226);
+            dgvDSHoaDon.Size = new Size(1367, 281);
             dgvDSHoaDon.TabIndex = 40;
             // 
             // label6
@@ -117,9 +126,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(128, 64, 64);
-            label6.Location = new Point(316, 7);
+            label6.Location = new Point(655, 9);
             label6.Name = "label6";
-            label6.Size = new Size(157, 25);
+            label6.Size = new Size(201, 32);
             label6.TabIndex = 39;
             label6.Text = "Quản lý hóa đơn";
             // 
@@ -128,24 +137,25 @@
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = Properties.Resources.Logoquan;
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(4, 7);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Location = new Point(5, 9);
+            pictureBox1.Margin = new Padding(5, 5, 5, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(93, 59);
+            pictureBox1.Size = new Size(106, 79);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 68;
             pictureBox1.TabStop = false;
             // 
             // HoaDonControll
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             Controls.Add(dgvDSHoaDon);
             Controls.Add(label6);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "HoaDonControll";
-            Size = new Size(768, 474);
+            Size = new Size(1367, 632);
             Load += HoaDonControll_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

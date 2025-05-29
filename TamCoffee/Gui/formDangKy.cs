@@ -29,7 +29,7 @@ namespace TamCoffee.Gui
             string xacnhanpwd = txtValiPwd.Text;
             string email = txtEmail.Text.Trim();
 
-            
+
             if (!KiemTra.KiemTraChuoi(username))
             {
                 MessageBox.Show("Tên đăng nhập không hợp lệ! Chỉ bao gồm chữ và số, không chứa dấu cách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -37,7 +37,7 @@ namespace TamCoffee.Gui
                 return;
             }
 
-            
+
             if (string.IsNullOrWhiteSpace(pwd) || pwd.Length < 6)
             {
                 MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -45,7 +45,7 @@ namespace TamCoffee.Gui
                 return;
             }
 
-            
+
             if (pwd != xacnhanpwd)
             {
                 MessageBox.Show("Xác nhận mật khẩu không khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,14 +53,15 @@ namespace TamCoffee.Gui
                 return;
             }
 
-            
+
             if (!KiemTra.IsEmail(email))
             {
                 MessageBox.Show("Email không hợp lệ! Phải đúng định dạng email hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
-            Taikhoan tk = new Taikhoan {
+            Taikhoan tk = new Taikhoan
+            {
                 HovaTen = "",
                 TenTaiKhoan = username,
                 MatKhau = pwd,
@@ -68,7 +69,7 @@ namespace TamCoffee.Gui
                 Email = email,
                 MaChucVu = null
             };
-        
+
             var result = _login.addTaikhoan(tk);
 
             if (result)
@@ -84,5 +85,9 @@ namespace TamCoffee.Gui
 
         }
 
+        private void DangKy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
