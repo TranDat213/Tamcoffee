@@ -46,8 +46,6 @@
             lbTrangThai = new Label();
             flpChiTiet = new FlowLayoutPanel();
             lblTongTien = new Label();
-            label7 = new Label();
-            lblChiPhiKhac = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -221,31 +219,11 @@
             lblTongTien.TabIndex = 61;
             lblTongTien.Text = "label7";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(87, 280);
-            label7.Name = "label7";
-            label7.Size = new Size(73, 15);
-            label7.TabIndex = 62;
-            label7.Text = "Chi phí khác";
-            // 
-            // lblChiPhiKhac
-            // 
-            lblChiPhiKhac.AutoSize = true;
-            lblChiPhiKhac.Location = new Point(207, 280);
-            lblChiPhiKhac.Name = "lblChiPhiKhac";
-            lblChiPhiKhac.Size = new Size(38, 15);
-            lblChiPhiKhac.TabIndex = 63;
-            lblChiPhiKhac.Text = "label8";
-            // 
             // formHoaDon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(600, 725);
-            Controls.Add(lblChiPhiKhac);
-            Controls.Add(label7);
             Controls.Add(lblTongTien);
             Controls.Add(flpChiTiet);
             Controls.Add(lbTrangThai);
@@ -292,7 +270,5 @@
         private Label lbTrangThai;
         private FlowLayoutPanel flpChiTiet;
         private Label lblTongTien;
-        private Label label7;
-        private Label lblChiPhiKhac;
     }
 }

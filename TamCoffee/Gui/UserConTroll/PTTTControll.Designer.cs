@@ -42,10 +42,11 @@
             // dgvPTTT
             // 
             dgvPTTT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPTTT.Location = new Point(68, 198);
+            dgvPTTT.Dock = DockStyle.Bottom;
+            dgvPTTT.Location = new Point(0, 231);
             dgvPTTT.Name = "dgvPTTT";
             dgvPTTT.RowTemplate.Height = 25;
-            dgvPTTT.Size = new Size(653, 254);
+            dgvPTTT.Size = new Size(788, 254);
             dgvPTTT.TabIndex = 61;
             // 
             // txtTenPTTT

@@ -31,10 +31,10 @@
             txtTenSanPham = new TextBox();
             txtMaSanPham = new TextBox();
             label9 = new Label();
-            button3 = new Button();
-            button2 = new Button();
+            btnSuaSP = new Button();
+            btnXoaSP = new Button();
             label6 = new Label();
-            button1 = new Button();
+            btnThemSP = new Button();
             dgvSanPham = new DataGridView();
             label5 = new Label();
             txtGiaBan = new TextBox();
@@ -42,7 +42,8 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            comboBox1 = new ComboBox();
+            cboLoaiHang = new ComboBox();
+            btnRefesh = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -71,23 +72,25 @@
             label9.TabIndex = 59;
             label9.Text = "Mã sản phẩm";
             // 
-            // button3
+            // btnSuaSP
             // 
-            button3.Location = new Point(526, 124);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 58;
-            button3.Text = "Sửa";
-            button3.UseVisualStyleBackColor = true;
+            btnSuaSP.Location = new Point(526, 124);
+            btnSuaSP.Name = "btnSuaSP";
+            btnSuaSP.Size = new Size(75, 23);
+            btnSuaSP.TabIndex = 58;
+            btnSuaSP.Text = "Sửa";
+            btnSuaSP.UseVisualStyleBackColor = true;
+            btnSuaSP.Click += btnSuaSP_Click;
             // 
-            // button2
+            // btnXoaSP
             // 
-            button2.Location = new Point(526, 86);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 57;
-            button2.Text = "Xóa";
-            button2.UseVisualStyleBackColor = true;
+            btnXoaSP.Location = new Point(526, 86);
+            btnXoaSP.Name = "btnXoaSP";
+            btnXoaSP.Size = new Size(75, 23);
+            btnXoaSP.TabIndex = 57;
+            btnXoaSP.Text = "Xóa";
+            btnXoaSP.UseVisualStyleBackColor = true;
+            btnXoaSP.Click += btnXoaSP_Click;
             // 
             // label6
             // 
@@ -100,14 +103,15 @@
             label6.TabIndex = 56;
             label6.Text = "Quản lý sản phẩm";
             // 
-            // button1
+            // btnThemSP
             // 
-            button1.Location = new Point(526, 49);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 55;
-            button1.Text = "Thêm";
-            button1.UseVisualStyleBackColor = true;
+            btnThemSP.Location = new Point(526, 49);
+            btnThemSP.Name = "btnThemSP";
+            btnThemSP.Size = new Size(75, 23);
+            btnThemSP.TabIndex = 55;
+            btnThemSP.Text = "Thêm";
+            btnThemSP.UseVisualStyleBackColor = true;
+            btnThemSP.Click += btnThemSP_Click;
             // 
             // dgvSanPham
             // 
@@ -118,6 +122,7 @@
             dgvSanPham.RowTemplate.Height = 25;
             dgvSanPham.Size = new Size(836, 203);
             dgvSanPham.TabIndex = 54;
+            dgvSanPham.CellClick += dgvSanPham_CellClick;
             // 
             // label5
             // 
@@ -140,9 +145,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(129, 164);
             label4.Name = "label4";
-            label4.Size = new Size(101, 15);
+            label4.Size = new Size(84, 15);
             label4.TabIndex = 51;
-            label4.Text = "Mã loại sản phẩm";
+            label4.Text = "Loại sản phẩm";
             // 
             // label2
             // 
@@ -177,27 +182,38 @@
             pictureBox1.TabIndex = 68;
             pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // cboLoaiHang
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(250, 156);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(247, 23);
-            comboBox1.TabIndex = 69;
+            cboLoaiHang.FormattingEnabled = true;
+            cboLoaiHang.Location = new Point(250, 156);
+            cboLoaiHang.Name = "cboLoaiHang";
+            cboLoaiHang.Size = new Size(247, 23);
+            cboLoaiHang.TabIndex = 69;
+            // 
+            // btnRefesh
+            // 
+            btnRefesh.Location = new Point(526, 160);
+            btnRefesh.Name = "btnRefesh";
+            btnRefesh.Size = new Size(75, 23);
+            btnRefesh.TabIndex = 70;
+            btnRefesh.Text = "Refesh";
+            btnRefesh.UseVisualStyleBackColor = true;
+            btnRefesh.Click += btnRefesh_Click;
             // 
             // SanPhamControll
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(comboBox1);
+            Controls.Add(btnRefesh);
+            Controls.Add(cboLoaiHang);
             Controls.Add(pictureBox1);
             Controls.Add(txtTenSanPham);
             Controls.Add(txtMaSanPham);
             Controls.Add(label9);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnSuaSP);
+            Controls.Add(btnXoaSP);
             Controls.Add(label6);
-            Controls.Add(button1);
+            Controls.Add(btnThemSP);
             Controls.Add(dgvSanPham);
             Controls.Add(label5);
             Controls.Add(txtGiaBan);
@@ -217,10 +233,10 @@
         private TextBox txtTenSanPham;
         private TextBox txtMaSanPham;
         private Label label9;
-        private Button button3;
-        private Button button2;
+        private Button btnSuaSP;
+        private Button btnXoaSP;
         private Label label6;
-        private Button button1;
+        private Button btnThemSP;
         private DataGridView dgvSanPham;
         private Label label5;
         private TextBox txtGiaBan;
@@ -228,6 +244,7 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private ComboBox comboBox1;
+        private ComboBox cboLoaiHang;
+        private Button btnRefesh;
     }
 }

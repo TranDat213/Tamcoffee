@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            cboMaHoaDon = new ComboBox();
-            button1 = new Button();
-            radioButton2 = new RadioButton();
-            textBox1 = new TextBox();
-            radioButton1 = new RadioButton();
+            cboMaTK = new ComboBox();
+            btnTimKiem = new Button();
+            radTimMaTK = new RadioButton();
+            radTimNgayLap = new RadioButton();
             dgvDSHoaDon = new DataGridView();
             label6 = new Label();
             pictureBox1 = new PictureBox();
+            btnXoaHD = new Button();
+            button3 = new Button();
+            dtpNgayLap = new DateTimePicker();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDSHoaDon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -44,63 +46,57 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(cboMaHoaDon);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(209, 57);
+            groupBox1.Controls.Add(dtpNgayLap);
+            groupBox1.Controls.Add(cboMaTK);
+            groupBox1.Controls.Add(btnTimKiem);
+            groupBox1.Controls.Add(radTimMaTK);
+            groupBox1.Controls.Add(radTimNgayLap);
+            groupBox1.Location = new Point(140, 57);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(294, 142);
+            groupBox1.Size = new Size(399, 142);
             groupBox1.TabIndex = 41;
             groupBox1.TabStop = false;
             groupBox1.Text = "Tìm Hóa Đơn";
             // 
-            // cboMaHoaDon
+            // cboMaTK
             // 
-            cboMaHoaDon.FormattingEnabled = true;
-            cboMaHoaDon.Location = new Point(152, 34);
-            cboMaHoaDon.Name = "cboMaHoaDon";
-            cboMaHoaDon.Size = new Size(121, 23);
-            cboMaHoaDon.TabIndex = 51;
+            cboMaTK.FormattingEnabled = true;
+            cboMaTK.Location = new Point(173, 74);
+            cboMaTK.Name = "cboMaTK";
+            cboMaTK.Size = new Size(121, 23);
+            cboMaTK.TabIndex = 52;
             // 
-            // button1
+            // btnTimKiem
             // 
-            button1.Location = new Point(23, 102);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 35);
-            button1.TabIndex = 38;
-            button1.Text = "Tìm kiếm";
-            button1.UseVisualStyleBackColor = true;
+            btnTimKiem.Location = new Point(23, 102);
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(91, 35);
+            btnTimKiem.TabIndex = 38;
+            btnTimKiem.Text = "Tìm kiếm";
+            btnTimKiem.UseVisualStyleBackColor = true;
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
-            // radioButton2
+            // radTimMaTK
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(18, 74);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(120, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Tìm mã nhân viên";
-            radioButton2.UseVisualStyleBackColor = true;
+            radTimMaTK.AutoSize = true;
+            radTimMaTK.Location = new Point(18, 74);
+            radTimMaTK.Name = "radTimMaTK";
+            radTimMaTK.Size = new Size(117, 19);
+            radTimMaTK.TabIndex = 1;
+            radTimMaTK.TabStop = true;
+            radTimMaTK.Text = "Tìm mã tài khoản\r\n";
+            radTimMaTK.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // radTimNgayLap
             // 
-            textBox1.Location = new Point(140, 73);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 23);
-            textBox1.TabIndex = 37;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(18, 38);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(115, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Tìm mã Hóa Đơn";
-            radioButton1.UseVisualStyleBackColor = true;
+            radTimNgayLap.AutoSize = true;
+            radTimNgayLap.Location = new Point(18, 38);
+            radTimNgayLap.Name = "radTimNgayLap";
+            radTimNgayLap.Size = new Size(148, 19);
+            radTimNgayLap.TabIndex = 0;
+            radTimNgayLap.TabStop = true;
+            radTimNgayLap.Text = "Tìm hóa đơn theo ngày";
+            radTimNgayLap.UseVisualStyleBackColor = true;
             // 
             // dgvDSHoaDon
             // 
@@ -136,10 +132,39 @@
             pictureBox1.TabIndex = 68;
             pictureBox1.TabStop = false;
             // 
+            // btnXoaHD
+            // 
+            btnXoaHD.Location = new Point(584, 57);
+            btnXoaHD.Name = "btnXoaHD";
+            btnXoaHD.Size = new Size(91, 35);
+            btnXoaHD.TabIndex = 69;
+            btnXoaHD.Text = "Xóa";
+            btnXoaHD.UseVisualStyleBackColor = true;
+            btnXoaHD.Click += btnXoaHD_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(584, 115);
+            button3.Name = "button3";
+            button3.Size = new Size(91, 35);
+            button3.TabIndex = 70;
+            button3.Text = "Refesh";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // dtpNgayLap
+            // 
+            dtpNgayLap.Location = new Point(176, 34);
+            dtpNgayLap.Name = "dtpNgayLap";
+            dtpNgayLap.Size = new Size(200, 23);
+            dtpNgayLap.TabIndex = 53;
+            // 
             // HoaDonControll
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button3);
+            Controls.Add(btnXoaHD);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             Controls.Add(dgvDSHoaDon);
@@ -158,13 +183,15 @@
         #endregion
 
         private GroupBox groupBox1;
-        private ComboBox cboMaHoaDon;
-        private Button button1;
-        private RadioButton radioButton2;
-        private TextBox textBox1;
-        private RadioButton radioButton1;
+        private Button btnTimKiem;
+        private RadioButton radTimMaTK;
+        private RadioButton radTimNgayLap;
         private DataGridView dgvDSHoaDon;
         private Label label6;
         private PictureBox pictureBox1;
+        private ComboBox cboMaTK;
+        private Button btnXoaHD;
+        private Button button3;
+        private DateTimePicker dtpNgayLap;
     }
 }

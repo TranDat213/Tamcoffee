@@ -53,6 +53,11 @@ namespace TamCoffee.Gui
                                   .ToList();
 
                 dgvDSMon.DataSource = viewlist;
+                dgvDSMon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvDSMon.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvDSMon.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+                dgvDSMon.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
@@ -161,23 +166,77 @@ namespace TamCoffee.Gui
                 hdtamdao.ThemMonTam(chiTiet);
                 dgvChiTietGIoHang.Rows.Add(maSp, tenSp, gia, soluong, thanhTien);
 
+                dgvChiTietGIoHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvChiTietGIoHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvChiTietGIoHang.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+                dgvChiTietGIoHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             }
         }
 
+        //private void btnLuu_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        HoaDonDao hddao = new HoaDonDao();
+
+        //        var dschitiethd = _hdtam.DanhSachChiTiet;
+        //        var donhangMoi = hddao.LuuHDTVaoDatabase(dschitiethd);
+
+        //        if (donhangMoi != null)
+        //        {
+        //            _hdtam.DonHangTam = donhangMoi;
+        //            MessageBox.Show("Lưu hóa đơn thành công!");
+
+        //        }
+        //        else
+        //            MessageBox.Show("Lưu hóa đơn thất bại!");
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //}
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
             {
                 HoaDonDao hddao = new HoaDonDao();
 
-                var dschitiethd = _hdtam.DanhSachChiTiet;
+                var dschitiethd = hdtamdao.LayDSTam(); // Get the list from dao instead
+                if (dschitiethd.Count == 0)
+                {
+                    MessageBox.Show("Giỏ hàng đang trống!");
+                    return;
+                }
+
+                Console.WriteLine($"Đang lưu hóa đơn với {dschitiethd.Count} chi tiết");
+                foreach (var item in dschitiethd)
+                {
+                    Console.WriteLine($"Chi tiết: MaSP={item.MaSanPham}, SL={item.SoLuong}");
+                }
+
                 var donhangMoi = hddao.LuuHDTVaoDatabase(dschitiethd);
 
                 if (donhangMoi != null)
                 {
                     _hdtam.DonHangTam = donhangMoi;
-                    MessageBox.Show("Lưu hóa đơn thành công!");
+                    MessageBox.Show("Lưu hóa đơn thành công! Mã hóa đơn: " + donhangMoi.MaDonHang);
+
+                    // Xóa danh sách tạm sau khi đã lưu thành công
+                    hdtamdao.XoaDSTam();
+
+                    // Xóa dữ liệu hiển thị trong DataGridView
+                    dgvChiTietGIoHang.Rows.Clear();
+
+                    // Reset tổng tiền về 0
                    
+
+                    // Mở form hóa đơn ngay sau khi lưu thành công
+                    var hoaDonForm = new formHoaDon(donhangMoi.MaDonHang);
+                    hoaDonForm.ShowDialog();
                 }
                 else
                     MessageBox.Show("Lưu hóa đơn thất bại!");
@@ -185,7 +244,8 @@ namespace TamCoffee.Gui
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show($"Lỗi khi lưu hóa đơn: {ex.Message}");
+                Console.WriteLine($"Exception: {ex.ToString()}");
             }
         }
 

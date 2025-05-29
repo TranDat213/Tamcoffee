@@ -109,6 +109,19 @@ namespace TamCoffee.Models
                 throw new Exception($"Lỗi khi lấy sản phẩm theo mã loại sản phẩm: {ex.Message}");
             }
         }
+        public List<Sanpham> GetSanphamsByTenLoaiSanPham(string ten)
+        {
+            try
+            {
+                return _context.Sanphams.Where(s => s.TenSanPham==ten)
+                                        .Include(s => s.MaLoaiSanPhamNavigation)
+                                        .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy sản phẩm theo tên loại sản phẩm: {ex.Message}");
+            }
+        }
 
 
         //public List<Sanpham> GetSanphamsByLoaiSanPham(int maLoaiSanPham)

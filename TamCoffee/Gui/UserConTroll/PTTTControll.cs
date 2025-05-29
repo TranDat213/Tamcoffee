@@ -23,18 +23,18 @@ namespace TamCoffee.Gui.UserConTroll
 
         private void PTTTControll_Load(object sender, EventArgs e)
         {
-            //LoadDataPTTT();
+            LoadDataPTTT();
         }
-        //private void LoadDataPTTT()
-        //{
-        //    PhuongThucTTDao dao=new PhuongThucTTDao();
-        //    List<Phuongthucthanhtoan> list=dao.GetAllPTTT();
-        //    var viewlist = list.Select(l => new
-        //    {
-        //        l.MaPttt,
-        //        l.TenPhuongThuc
-        //    }).ToList();
-        //    dgvPTTT.DataSource = viewlist;
-        //}
+        private void LoadDataPTTT()
+        {
+            PhuongThucTTDao dao = new PhuongThucTTDao();
+            List<Phuongthucthanhtoan> list = dao.GetAllPTTT();
+            var viewlist = list.Select(l => new
+            {
+                l.MaPttt,
+                l.TenPhuongThuc
+            }).ToList();
+            dgvPTTT.DataSource = viewlist;
+        }
     }
 }

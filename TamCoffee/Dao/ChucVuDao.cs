@@ -18,7 +18,18 @@ namespace TamCoffee.Dao
         {
             _context = new TAMCOFFEEContext();
         }
-
+        public List<Chucvu>? LayTatCaChucVu()
+        {
+            try
+            {
+                return _context.Chucvus.Include(c=>c.Taikhoans).ToList();
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách chức vụ.", ex);
+            }
+        }
         public bool ThemChucVu(Chucvu chucVu)
         {
             try

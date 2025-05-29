@@ -35,6 +35,10 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            btnThem = new Button();
+            btnXoa = new Button();
+            btnSua = new Button();
+            btnRefesh = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvTrangThaiDH).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,11 +46,13 @@
             // dgvTrangThaiDH
             // 
             dgvTrangThaiDH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTrangThaiDH.Location = new Point(45, 180);
+            dgvTrangThaiDH.Dock = DockStyle.Bottom;
+            dgvTrangThaiDH.Location = new Point(0, 205);
             dgvTrangThaiDH.Name = "dgvTrangThaiDH";
             dgvTrangThaiDH.RowTemplate.Height = 25;
-            dgvTrangThaiDH.Size = new Size(653, 254);
+            dgvTrangThaiDH.Size = new Size(742, 254);
             dgvTrangThaiDH.TabIndex = 66;
+            dgvTrangThaiDH.CellClick += dgvTrangThaiDH_CellClick;
             // 
             // txtTenTTDH
             // 
@@ -105,10 +111,54 @@
             pictureBox1.TabIndex = 67;
             pictureBox1.TabStop = false;
             // 
+            // btnThem
+            // 
+            btnThem.Location = new Point(588, 50);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(75, 23);
+            btnThem.TabIndex = 68;
+            btnThem.Text = "Thêm";
+            btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
+            // 
+            // btnXoa
+            // 
+            btnXoa.Location = new Point(588, 79);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(75, 23);
+            btnXoa.TabIndex = 69;
+            btnXoa.Text = "Xóa";
+            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
+            // 
+            // btnSua
+            // 
+            btnSua.Location = new Point(588, 113);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(75, 23);
+            btnSua.TabIndex = 70;
+            btnSua.Text = "Sửa";
+            btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
+            // 
+            // btnRefesh
+            // 
+            btnRefesh.Location = new Point(588, 142);
+            btnRefesh.Name = "btnRefesh";
+            btnRefesh.Size = new Size(75, 23);
+            btnRefesh.TabIndex = 71;
+            btnRefesh.Text = "Refesh";
+            btnRefesh.UseVisualStyleBackColor = true;
+            btnRefesh.Click += btnRefesh_Click;
+            // 
             // TrangThaiControll
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnRefesh);
+            Controls.Add(btnSua);
+            Controls.Add(btnXoa);
+            Controls.Add(btnThem);
             Controls.Add(pictureBox1);
             Controls.Add(dgvTrangThaiDH);
             Controls.Add(txtTenTTDH);
@@ -134,5 +184,9 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private Button btnThem;
+        private Button btnXoa;
+        private Button btnSua;
+        private Button btnRefesh;
     }
 }

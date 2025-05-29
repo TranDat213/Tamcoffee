@@ -9,6 +9,7 @@ namespace TamCoffee.Models
         public int MaDonHang { get; set; }
         public int SoLuong { get; set; }
 
+        public Chitiethoadon() { }
         public Chitiethoadon(int maSanPham, int maDonHang, int soLuong)
         {
             MaSanPham = maSanPham;

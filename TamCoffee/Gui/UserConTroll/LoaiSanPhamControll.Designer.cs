@@ -32,9 +32,13 @@
             label1 = new Label();
             label2 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtMaLoai = new TextBox();
             txtTenLoaiSP = new TextBox();
             dgvLoaiSanPham = new DataGridView();
+            btnThem = new Button();
+            btnXoa = new Button();
+            btnSua = new Button();
+            btnRefesh = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLoaiSanPham).BeginInit();
             SuspendLayout();
@@ -81,13 +85,13 @@
             label4.TabIndex = 67;
             label4.Text = "Tên loại sản phẩm";
             // 
-            // textBox1
+            // txtMaLoai
             // 
-            textBox1.Location = new Point(328, 85);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(170, 23);
-            textBox1.TabIndex = 68;
+            txtMaLoai.Location = new Point(328, 85);
+            txtMaLoai.Name = "txtMaLoai";
+            txtMaLoai.ReadOnly = true;
+            txtMaLoai.Size = new Size(170, 23);
+            txtMaLoai.TabIndex = 68;
             // 
             // txtTenLoaiSP
             // 
@@ -105,14 +109,59 @@
             dgvLoaiSanPham.RowTemplate.Height = 25;
             dgvLoaiSanPham.Size = new Size(905, 237);
             dgvLoaiSanPham.TabIndex = 70;
+            dgvLoaiSanPham.CellClick += dgvLoaiSanPham_CellClick;
+            // 
+            // btnThem
+            // 
+            btnThem.Location = new Point(654, 69);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(75, 23);
+            btnThem.TabIndex = 71;
+            btnThem.Text = "Thêm\r\n";
+            btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
+            // 
+            // btnXoa
+            // 
+            btnXoa.Location = new Point(654, 98);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(75, 23);
+            btnXoa.TabIndex = 72;
+            btnXoa.Text = "Xóa";
+            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
+            // 
+            // btnSua
+            // 
+            btnSua.Location = new Point(654, 127);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(75, 23);
+            btnSua.TabIndex = 73;
+            btnSua.Text = "Sửa";
+            btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
+            // 
+            // btnRefesh
+            // 
+            btnRefesh.Location = new Point(654, 156);
+            btnRefesh.Name = "btnRefesh";
+            btnRefesh.Size = new Size(75, 23);
+            btnRefesh.TabIndex = 74;
+            btnRefesh.Text = "Refesh";
+            btnRefesh.UseVisualStyleBackColor = true;
+            btnRefesh.Click += btnRefesh_Click;
             // 
             // LoaiSanPhamControll
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnRefesh);
+            Controls.Add(btnSua);
+            Controls.Add(btnXoa);
+            Controls.Add(btnThem);
             Controls.Add(dgvLoaiSanPham);
             Controls.Add(txtTenLoaiSP);
-            Controls.Add(textBox1);
+            Controls.Add(txtMaLoai);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
@@ -132,8 +181,12 @@
         private Label label1;
         private Label label2;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtMaLoai;
         private TextBox txtTenLoaiSP;
         private DataGridView dgvLoaiSanPham;
+        private Button btnThem;
+        private Button btnXoa;
+        private Button btnSua;
+        private Button btnRefesh;
     }
 }
