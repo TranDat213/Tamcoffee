@@ -209,16 +209,16 @@ namespace TamCoffee.Dao
                     newChiTiets.Add(newChiTiet);
                     dh.Chitiethoadons.Add(newChiTiet); // Thêm vào danh sách của đơn hàng
                     _context.Chitiethoadons.Add(newChiTiet); // Thêm vào DbContext
-                    Console.WriteLine($"HoaDonDao: Đã chuẩn bị chi tiết: SP={newChiTiet.MaSanPham}, SL={newChiTiet.SoLuong}, ĐH={newChiTiet.MaDonHang}");
+                   
                 }
 
                 // Lưu tất cả chi tiết vào database
                 int result2 = _context.SaveChanges();
-                Console.WriteLine($"HoaDonDao: Đã lưu {result2} chi tiết hóa đơn vào database.");
+                //Console.WriteLine($"HoaDonDao: Đã lưu {result2} chi tiết hóa đơn vào database.");
 
                 // Đếm trực tiếp số lượng chi tiết để kiểm tra
                 var countCheck = _context.Chitiethoadons.Count(c => c.MaDonHang == dh.MaDonHang);
-                Console.WriteLine($"HoaDonDao: Kiểm tra - Số lượng chi tiết của đơn hàng {dh.MaDonHang} trong DB: {countCheck}");
+                //Console.WriteLine($"HoaDonDao: Kiểm tra - Số lượng chi tiết của đơn hàng {dh.MaDonHang} trong DB: {countCheck}");
 
                 if (countCheck != chittiets.Count)
                 {
@@ -241,19 +241,19 @@ namespace TamCoffee.Dao
                 if (completeOrder != null)
                 {
                     int detailCount = completeOrder.Chitiethoadons?.Count ?? 0;
-                    Console.WriteLine($"HoaDonDao: Đã tải lại hóa đơn {completeOrder.MaDonHang} với {detailCount} chi tiết.");
+                    //Console.WriteLine($"HoaDonDao: Đã tải lại hóa đơn {completeOrder.MaDonHang} với {detailCount} chi tiết.");
 
                     // Tải lại chi tiết hóa đơn để đảm bảo dữ liệu đầy đủ
                     if (countCheck > 0)
                     {
-                        Console.WriteLine("HoaDonDao: Tải trực tiếp chi tiết hóa đơn từ database...");
+                        //Console.WriteLine("HoaDonDao: Tải trực tiếp chi tiết hóa đơn từ database...");
                         // Truy vấn trực tiếp vào bảng chi tiết
                         var details = _context.Chitiethoadons
                             .AsNoTracking()
                             .Where(c => c.MaDonHang == dh.MaDonHang)
                             .ToList();
 
-                        Console.WriteLine($"HoaDonDao: Đã tải trực tiếp {details.Count} chi tiết.");
+                        //Console.WriteLine($"HoaDonDao: Đã tải trực tiếp {details.Count} chi tiết.");
                         completeOrder.Chitiethoadons = details;
                     }
                 }

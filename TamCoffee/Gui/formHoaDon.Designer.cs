@@ -244,6 +244,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "formHoaDon";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Hoa Don";
             Load += formHoaDon_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
