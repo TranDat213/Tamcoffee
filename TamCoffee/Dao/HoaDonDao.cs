@@ -85,7 +85,7 @@ namespace TamCoffee.Dao
             {
                 return _context.Donhangs
                                .Where(d => d.NgayLapHoaDon.Date == ngay.Date)
-                               .Include(d => d.MaTkNavigation) // nếu cần thông tin tài khoản
+                               //.Include(d => d.MaTkNavigation) // nếu cần thông tin tài khoản
                                .ToList();
             }
             catch (Exception ex)
@@ -99,7 +99,7 @@ namespace TamCoffee.Dao
             {
                 return _context.Donhangs
                                .Where(d => d.MaTk == matk)
-                               .Include(d => d.MaTkNavigation) // nếu cần thông tin tài khoản
+                               //.Include(d => d.MaTkNavigation) // nếu cần thông tin tài khoản
                                .ToList();
             }
             catch (Exception ex)

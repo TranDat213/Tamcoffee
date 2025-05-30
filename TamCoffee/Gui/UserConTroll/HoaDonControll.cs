@@ -122,6 +122,10 @@ namespace TamCoffee.Gui.UserConTroll
 
                 // Hiển thị dữ liệu lên DataGridView
                 dgvDSHoaDon.DataSource = dsHD;
+                dgvDSHoaDon.Columns["MaTkNavigation"].Visible = false;
+                dgvDSHoaDon.Columns["MaPtttNavigation"].Visible = false;
+                dgvDSHoaDon.Columns["MaTrangThaiDhNavigation"].Visible = false;
+                dgvDSHoaDon.Columns["Chitiethoadons"].Visible = false;
             }
             catch (Exception ex)
             {

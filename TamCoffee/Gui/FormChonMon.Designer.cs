@@ -31,7 +31,6 @@
             linkLabel1 = new LinkLabel();
             pictureBox1 = new PictureBox();
             menuStrip1 = new MenuStrip();
-            btnXemHD = new Button();
             dgvDSMon = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -44,7 +43,6 @@
             label4 = new Label();
             txtSoLuong = new TextBox();
             btnChonSP = new Button();
-            btnXoaSP = new Button();
             btnThoat = new Button();
             btnLuu = new Button();
             cboTimLoaiMon = new ComboBox();
@@ -90,16 +88,6 @@
             menuStrip1.TabIndex = 38;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
-            // 
-            // btnXemHD
-            // 
-            btnXemHD.Location = new Point(967, 541);
-            btnXemHD.Name = "btnXemHD";
-            btnXemHD.Size = new Size(139, 42);
-            btnXemHD.TabIndex = 49;
-            btnXemHD.Text = "Xem hóa đơn";
-            btnXemHD.UseVisualStyleBackColor = true;
-            btnXemHD.Click += button15_Click;
             // 
             // dgvDSMon
             // 
@@ -194,16 +182,6 @@
             btnChonSP.UseVisualStyleBackColor = true;
             btnChonSP.Click += btnChonSP_Click;
             // 
-            // btnXoaSP
-            // 
-            btnXoaSP.Location = new Point(706, 571);
-            btnXoaSP.Name = "btnXoaSP";
-            btnXoaSP.Size = new Size(75, 23);
-            btnXoaSP.TabIndex = 59;
-            btnXoaSP.Text = "Xóa";
-            btnXoaSP.UseVisualStyleBackColor = true;
-            btnXoaSP.Click += btnXoaSP_Click;
-            // 
             // btnThoat
             // 
             btnThoat.Location = new Point(0, 571);
@@ -216,9 +194,9 @@
             // 
             // btnLuu
             // 
-            btnLuu.Location = new Point(635, 571);
+            btnLuu.Location = new Point(943, 487);
             btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(65, 23);
+            btnLuu.Size = new Size(103, 77);
             btnLuu.TabIndex = 61;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
@@ -241,7 +219,6 @@
             Controls.Add(cboTimLoaiMon);
             Controls.Add(btnLuu);
             Controls.Add(btnThoat);
-            Controls.Add(btnXoaSP);
             Controls.Add(btnChonSP);
             Controls.Add(txtSoLuong);
             Controls.Add(label4);
@@ -249,7 +226,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dgvDSMon);
-            Controls.Add(btnXemHD);
             Controls.Add(linkLabel1);
             Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
@@ -270,7 +246,6 @@
         private LinkLabel linkLabel1;
         private PictureBox pictureBox1;
         private MenuStrip menuStrip1;
-        private Button btnXemHD;
         private DataGridView dgvDSMon;
         private Label label1;
         private Label label2;
@@ -278,7 +253,6 @@
         private Label label4;
         private TextBox txtSoLuong;
         private Button btnChonSP;
-        private Button btnXoaSP;
         private Button btnThoat;
         private Button btnLuu;
         private ComboBox cboTimLoaiMon;

@@ -84,7 +84,7 @@ namespace TamCoffee.Gui
 
         private void button15_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mã đơn hàng là:" + _hdtam.DonHangTam.MaDonHang);
+            //MessageBox.Show("Mã đơn hàng là:" + _hdtam.DonHangTam.MaDonHang);
             Gui.formHoaDon hoaDon = new Gui.formHoaDon(_hdtam.DonHangTam.MaDonHang);
             hoaDon.ShowDialog();
         }
@@ -212,7 +212,7 @@ namespace TamCoffee.Gui
                     return;
                 }
 
-                Console.WriteLine($"Đang lưu hóa đơn với {dschitiethd.Count} chi tiết");
+                //Console.WriteLine($"Đang lưu hóa đơn với {dschitiethd.Count} chi tiết");
                 foreach (var item in dschitiethd)
                 {
                     Console.WriteLine($"Chi tiết: MaSP={item.MaSanPham}, SL={item.SoLuong}");
@@ -223,7 +223,7 @@ namespace TamCoffee.Gui
                 if (donhangMoi != null)
                 {
                     _hdtam.DonHangTam = donhangMoi;
-                    MessageBox.Show("Lưu hóa đơn thành công! Mã hóa đơn: " + donhangMoi.MaDonHang);
+                    MessageBox.Show("Lưu hóa đơn thành công! ");
 
                     // Xóa danh sách tạm sau khi đã lưu thành công
                     hdtamdao.XoaDSTam();
@@ -232,7 +232,7 @@ namespace TamCoffee.Gui
                     dgvChiTietGIoHang.Rows.Clear();
 
                     // Reset tổng tiền về 0
-                   
+
 
                     // Mở form hóa đơn ngay sau khi lưu thành công
                     var hoaDonForm = new formHoaDon(donhangMoi.MaDonHang);

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cboChucVu = new ComboBox();
             label7 = new Label();
             gBGioiTinh = new GroupBox();
             radNu = new RadioButton();
@@ -52,18 +51,11 @@
             label1 = new Label();
             cboTimChucVu = new ComboBox();
             btnRefesh = new Button();
+            cboChucVu = new ComboBox();
             gBGioiTinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDSTaiKhoan).BeginInit();
             SuspendLayout();
-            // 
-            // cboChucVu
-            // 
-            cboChucVu.FormattingEnabled = true;
-            cboChucVu.Location = new Point(210, 290);
-            cboChucVu.Name = "cboChucVu";
-            cboChucVu.Size = new Size(212, 23);
-            cboChucVu.TabIndex = 76;
             // 
             // label7
             // 
@@ -80,7 +72,7 @@
             gBGioiTinh.Controls.Add(radNam);
             gBGioiTinh.Location = new Point(124, 194);
             gBGioiTinh.Name = "gBGioiTinh";
-            gBGioiTinh.Size = new Size(284, 46);
+            gBGioiTinh.Size = new Size(254, 46);
             gBGioiTinh.TabIndex = 74;
             gBGioiTinh.TabStop = false;
             gBGioiTinh.Text = "Giới tính";
@@ -113,7 +105,7 @@
             pictureBox1.Image = Properties.Resources.Logoquan;
             pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(12, 13);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(93, 59);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -124,21 +116,21 @@
             // 
             dgvDSTaiKhoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDSTaiKhoan.Dock = DockStyle.Right;
-            dgvDSTaiKhoan.Location = new Point(457, 0);
+            dgvDSTaiKhoan.Location = new Point(671, 0);
             dgvDSTaiKhoan.Margin = new Padding(3, 2, 3, 2);
             dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
             dgvDSTaiKhoan.RowHeadersWidth = 51;
             dgvDSTaiKhoan.RowTemplate.Height = 29;
-            dgvDSTaiKhoan.Size = new Size(676, 475);
+            dgvDSTaiKhoan.Size = new Size(462, 475);
             dgvDSTaiKhoan.TabIndex = 65;
             dgvDSTaiKhoan.CellClick += dgvDSTaiKhoan_CellClick;
             // 
             // btnTimChucvu
             // 
-            btnTimChucvu.Location = new Point(54, 391);
+            btnTimChucvu.Location = new Point(33, 401);
             btnTimChucvu.Margin = new Padding(3, 2, 3, 2);
             btnTimChucvu.Name = "btnTimChucvu";
-            btnTimChucvu.Size = new Size(82, 22);
+            btnTimChucvu.Size = new Size(72, 23);
             btnTimChucvu.TabIndex = 64;
             btnTimChucvu.Text = "Tìm";
             btnTimChucvu.UseVisualStyleBackColor = true;
@@ -277,21 +269,31 @@
             // cboTimChucVu
             // 
             cboTimChucVu.FormattingEnabled = true;
-            cboTimChucVu.Location = new Point(167, 390);
+            cboTimChucVu.Location = new Point(111, 401);
+            cboTimChucVu.Margin = new Padding(3, 2, 3, 2);
             cboTimChucVu.Name = "cboTimChucVu";
-            cboTimChucVu.Size = new Size(196, 23);
+            cboTimChucVu.Size = new Size(172, 23);
             cboTimChucVu.TabIndex = 77;
             // 
             // btnRefesh
             // 
-            btnRefesh.Location = new Point(54, 437);
+            btnRefesh.Location = new Point(411, 401);
             btnRefesh.Margin = new Padding(3, 2, 3, 2);
             btnRefesh.Name = "btnRefesh";
-            btnRefesh.Size = new Size(82, 22);
+            btnRefesh.Size = new Size(72, 23);
             btnRefesh.TabIndex = 78;
             btnRefesh.Text = "Refesh";
             btnRefesh.UseVisualStyleBackColor = true;
             btnRefesh.Click += btnRefesh_Click;
+            // 
+            // cboChucVu
+            // 
+            cboChucVu.FormattingEnabled = true;
+            cboChucVu.Location = new Point(209, 293);
+            cboChucVu.Margin = new Padding(3, 2, 3, 2);
+            cboChucVu.Name = "cboChucVu";
+            cboChucVu.Size = new Size(186, 23);
+            cboChucVu.TabIndex = 76;
             // 
             // NhanVienControll
             // 
@@ -331,7 +333,6 @@
         }
 
         #endregion
-        private ComboBox cboChucVu;
         private Label label7;
         private GroupBox gBGioiTinh;
         private RadioButton radNu;
@@ -355,5 +356,6 @@
         private Label label1;
         private ComboBox cboTimChucVu;
         private Button btnRefesh;
+        private ComboBox cboChucVu;
     }
 }

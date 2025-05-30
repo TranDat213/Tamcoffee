@@ -48,9 +48,11 @@
             dgvTrangThaiDH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTrangThaiDH.Dock = DockStyle.Bottom;
             dgvTrangThaiDH.Location = new Point(0, 205);
+            dgvTrangThaiDH.Margin = new Padding(3, 2, 3, 2);
             dgvTrangThaiDH.Name = "dgvTrangThaiDH";
+            dgvTrangThaiDH.RowHeadersWidth = 51;
             dgvTrangThaiDH.RowTemplate.Height = 25;
-            dgvTrangThaiDH.Size = new Size(742, 254);
+            dgvTrangThaiDH.Size = new Size(924, 254);
             dgvTrangThaiDH.TabIndex = 66;
             dgvTrangThaiDH.CellClick += dgvTrangThaiDH_CellClick;
             // 
@@ -104,7 +106,7 @@
             pictureBox1.Image = Properties.Resources.Logoquan;
             pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(93, 59);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -113,9 +115,10 @@
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(588, 50);
+            btnThem.Location = new Point(514, 38);
+            btnThem.Margin = new Padding(3, 2, 3, 2);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(75, 23);
+            btnThem.Size = new Size(66, 25);
             btnThem.TabIndex = 68;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
@@ -123,9 +126,10 @@
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(588, 79);
+            btnXoa.Location = new Point(514, 67);
+            btnXoa.Margin = new Padding(3, 2, 3, 2);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(75, 23);
+            btnXoa.Size = new Size(66, 22);
             btnXoa.TabIndex = 69;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
@@ -133,9 +137,10 @@
             // 
             // btnSua
             // 
-            btnSua.Location = new Point(588, 113);
+            btnSua.Location = new Point(514, 93);
+            btnSua.Margin = new Padding(3, 2, 3, 2);
             btnSua.Name = "btnSua";
-            btnSua.Size = new Size(75, 23);
+            btnSua.Size = new Size(66, 23);
             btnSua.TabIndex = 70;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
@@ -143,9 +148,10 @@
             // 
             // btnRefesh
             // 
-            btnRefesh.Location = new Point(588, 142);
+            btnRefesh.Location = new Point(514, 120);
+            btnRefesh.Margin = new Padding(3, 2, 3, 2);
             btnRefesh.Name = "btnRefesh";
-            btnRefesh.Size = new Size(75, 23);
+            btnRefesh.Size = new Size(66, 29);
             btnRefesh.TabIndex = 71;
             btnRefesh.Text = "Refesh";
             btnRefesh.UseVisualStyleBackColor = true;
@@ -167,7 +173,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "TrangThaiControll";
-            Size = new Size(742, 459);
+            Size = new Size(924, 459);
             Load += TrangThaiControll_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTrangThaiDH).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
